@@ -66,7 +66,7 @@ const Hero = () => {
               {[
                 { icon: "📊", label: "MySQL", position: "top-0 left-1/2 -translate-x-1/2 -translate-y-12" },
                 { icon: "📁", label: "S3", position: "top-1/4 right-0 translate-x-12" },
-                { icon: "✅", label: "Jira", position: "bottom-1/4 right-0 translate-x-12" },
+                { icon: "📄", label: "Pages", position: "bottom-1/4 right-0 translate-x-12" },
                 { icon: "📧", label: "Gmail", position: "bottom-0 left-1/2 -translate-x-1/2 translate-y-12" },
                 { icon: "📝", label: "Docs", position: "bottom-1/4 left-0 -translate-x-12" },
                 { icon: "🗂️", label: "Drive", position: "top-1/4 left-0 -translate-x-12" },

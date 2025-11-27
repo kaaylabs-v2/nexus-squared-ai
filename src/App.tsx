@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
-import UseCasesPage from "./pages/UseCasesPage";
+import Verticals from "./pages/Verticals";
 import PricingPage from "./pages/PricingPage";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
@@ -27,7 +27,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/product" element={<Product />} />
-              <Route path="/use-cases" element={<UseCasesPage />} />
+              <Route path="/verticals" element={<Verticals />} />
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/about" element={<About />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

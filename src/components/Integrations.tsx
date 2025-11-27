@@ -3,12 +3,12 @@ const Integrations = () => {
     { name: "WordPress", category: "CMS" },
     { name: "Shopify", category: "E-commerce" },
     { name: "Webflow", category: "Website Builder" },
-    { name: "Wix", category: "Website Builder" },
-    { name: "Squarespace", category: "Website Builder" },
-    { name: "React", category: "Framework" },
-    { name: "Next.js", category: "Framework" },
+    { name: "Blog Posts", category: "Content" },
+    { name: "Product Pages", category: "E-commerce" },
+    { name: "Documentation", category: "Knowledge Base" },
+    { name: "Landing Pages", category: "Marketing" },
     { name: "HTML/CSS", category: "Static Sites" },
-    { name: "Custom CMS", category: "Enterprise" },
+    { name: "FAQs", category: "Support" },
     { name: "Any Website", category: "Universal" },
   ];
 
@@ -45,12 +45,12 @@ const Integrations = () => {
                   {integration.name === "WordPress" && "📝"}
                   {integration.name === "Shopify" && "🛍️"}
                   {integration.name === "Webflow" && "💧"}
-                  {integration.name === "Wix" && "🎨"}
-                  {integration.name === "Squarespace" && "⬜"}
-                  {integration.name === "React" && "⚛️"}
-                  {integration.name === "Next.js" && "▲"}
+                  {integration.name === "Blog Posts" && "📰"}
+                  {integration.name === "Product Pages" && "🏷️"}
+                  {integration.name === "Documentation" && "📚"}
+                  {integration.name === "Landing Pages" && "🎯"}
                   {integration.name === "HTML/CSS" && "🌐"}
-                  {integration.name === "Custom CMS" && "🔧"}
+                  {integration.name === "FAQs" && "❓"}
                   {integration.name === "Any Website" && "✨"}
                 </div>
                 <div>
