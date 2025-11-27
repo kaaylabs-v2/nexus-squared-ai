@@ -12,6 +12,7 @@ import Security from "@/components/Security";
 import About from "@/components/About";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import ChatWidget from "@/components/ChatWidget";
 
 const Index = () => {
   return (
@@ -30,6 +31,9 @@ const Index = () => {
       <About />
       <FinalCTA />
       <Footer />
+      
+      {/* Live Demo Widget */}
+      <ChatWidget />
     </div>
   );
 };

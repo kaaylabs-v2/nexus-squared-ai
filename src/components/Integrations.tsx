@@ -1,15 +1,15 @@
 const Integrations = () => {
   const integrations = [
-    { name: "Jira", category: "Project Management" },
-    { name: "Google Workspace", category: "Productivity" },
-    { name: "MySQL", category: "Database" },
-    { name: "Amazon S3", category: "Storage" },
-    { name: "PostgreSQL", category: "Database" },
-    { name: "Flat Files", category: "Data" },
-    { name: "Websites", category: "Web" },
-    { name: "Notion", category: "Productivity" },
-    { name: "Salesforce", category: "CRM" },
-    { name: "+ 40 More", category: "Coming Soon" },
+    { name: "WordPress", category: "CMS" },
+    { name: "Shopify", category: "E-commerce" },
+    { name: "Webflow", category: "Website Builder" },
+    { name: "Wix", category: "Website Builder" },
+    { name: "Squarespace", category: "Website Builder" },
+    { name: "React", category: "Framework" },
+    { name: "Next.js", category: "Framework" },
+    { name: "HTML/CSS", category: "Static Sites" },
+    { name: "Custom CMS", category: "Enterprise" },
+    { name: "Any Website", category: "Universal" },
   ];
 
   return (
@@ -27,10 +27,10 @@ const Integrations = () => {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-text-light tracking-tight mb-4">
-            Works with your stack
+            Works on any platform
           </h2>
           <p className="text-xl text-text-muted-light">
-            No migrations. No disruptions. Just connect.
+            WordPress, Shopify, Webflow, custom sites—if it has HTML, it works.
           </p>
         </div>
 
@@ -42,16 +42,16 @@ const Integrations = () => {
             >
               <div className="text-center space-y-3">
                 <div className="text-3xl">
-                  {integration.name === "Jira" && "✅"}
-                  {integration.name === "Google Workspace" && "📧"}
-                  {integration.name === "MySQL" && "📊"}
-                  {integration.name === "Amazon S3" && "📁"}
-                  {integration.name === "PostgreSQL" && "🐘"}
-                  {integration.name === "Flat Files" && "📄"}
-                  {integration.name === "Websites" && "🌐"}
-                  {integration.name === "Notion" && "📝"}
-                  {integration.name === "Salesforce" && "☁️"}
-                  {integration.name === "+ 40 More" && "➕"}
+                  {integration.name === "WordPress" && "📝"}
+                  {integration.name === "Shopify" && "🛍️"}
+                  {integration.name === "Webflow" && "💧"}
+                  {integration.name === "Wix" && "🎨"}
+                  {integration.name === "Squarespace" && "⬜"}
+                  {integration.name === "React" && "⚛️"}
+                  {integration.name === "Next.js" && "▲"}
+                  {integration.name === "HTML/CSS" && "🌐"}
+                  {integration.name === "Custom CMS" && "🔧"}
+                  {integration.name === "Any Website" && "✨"}
                 </div>
                 <div>
                   <h3 className="font-bold text-text-light mb-1 group-hover:text-accent transition-colors">

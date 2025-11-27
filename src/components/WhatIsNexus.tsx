@@ -3,24 +3,24 @@ import { Shield, Zap, Database, Rocket } from "lucide-react";
 const WhatIsNexus = () => {
   const features = [
     {
-      icon: Shield,
-      title: "Multi-tenant by design",
-      description: "Isolated client environments",
+      icon: Zap,
+      title: "Instant answers",
+      description: "Guide visitors immediately",
     },
     {
       icon: Shield,
-      title: "Secure by default",
-      description: "Zero cross-tenant leakage",
+      title: "Your brand, your voice",
+      description: "Fully customizable responses",
     },
     {
       icon: Database,
-      title: "Chat with everything",
-      description: "SQL, docs, tickets, files",
+      title: "Smart navigation",
+      description: "Pages, products, FAQs",
     },
     {
       icon: Rocket,
-      title: "Deploy in minutes",
-      description: "Not weeks or months",
+      title: "5-minute setup",
+      description: "Copy, paste, done",
     },
   ];
 
@@ -28,20 +28,19 @@ const WhatIsNexus = () => {
     <section id="product" className="py-24 lg:py-32 bg-bg-secondary">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-center text-text-primary tracking-tight mb-6">
-          The platform that makes AI <br className="hidden sm:block" />
-          <span className="text-gradient-accent">actually useful</span> for your team
+          Turn confused visitors into <br className="hidden sm:block" />
+          <span className="text-gradient-accent">engaged customers</span>
         </h2>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mt-16">
           {/* Left: Description */}
           <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
             <p>
-              Nexus² is a <strong className="text-text-primary font-semibold">multi-tenant AI assistant platform</strong> designed
-              for enterprises.
+              Nexus² is a <strong className="text-text-primary font-semibold">smart website navigation assistant</strong> that
+              helps visitors find what they need—instantly.
             </p>
             <p>
-              Connect your internal data sources, configure AI behavior per workspace, and deploy
-              copilots that know your business inside out.
+              Deploy a beautiful chat widget on any page, customize the responses to match your brand, and watch your engagement metrics soar.
             </p>
           </div>
 
