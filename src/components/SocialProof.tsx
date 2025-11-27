@@ -9,7 +9,7 @@ const SocialProof = () => {
   ];
 
   return (
-    <section className="bg-bg-primary/50 backdrop-blur-xl py-12 border-y border-color-border-dark">
+    <section className="py-12">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <p className="text-center text-text-muted-light text-sm font-medium mb-8 tracking-wide uppercase">
           Trusted by data-driven teams at
