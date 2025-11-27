@@ -179,8 +179,8 @@ const Verticals = () => {
             <div key={i} className="space-y-12">
               {/* Vertical Header */}
               <div className="flex items-center gap-6">
-                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${vertical.gradient} flex items-center justify-center shadow-lg`}>
-                  <vertical.icon className="w-10 h-10 text-white" />
+                <div className={`w-24 h-24 rounded-3xl bg-gradient-to-br ${vertical.gradient} flex items-center justify-center shadow-sm border border-white/10`}>
+                  <vertical.icon className="w-12 h-12 text-white stroke-[1.5]" />
                 </div>
                 <div>
                   <h2 className="text-4xl font-black text-text-primary mb-2">{vertical.name}</h2>
