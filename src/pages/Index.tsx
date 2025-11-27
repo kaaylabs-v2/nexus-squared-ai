@@ -1,12 +1,35 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navigation from "@/components/Navigation";
+import Hero from "@/components/Hero";
+import SocialProof from "@/components/SocialProof";
+import WhatIsNexus from "@/components/WhatIsNexus";
+import CoreFeatures from "@/components/CoreFeatures";
+import HowItWorks from "@/components/HowItWorks";
+import Integrations from "@/components/Integrations";
+import UseCases from "@/components/UseCases";
+import ProductShowcase from "@/components/ProductShowcase";
+import Pricing from "@/components/Pricing";
+import Security from "@/components/Security";
+import About from "@/components/About";
+import FinalCTA from "@/components/FinalCTA";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Navigation />
+      <Hero />
+      <SocialProof />
+      <WhatIsNexus />
+      <CoreFeatures />
+      <HowItWorks />
+      <Integrations />
+      <UseCases />
+      <ProductShowcase />
+      <Pricing />
+      <Security />
+      <About />
+      <FinalCTA />
+      <Footer />
     </div>
   );
 };
