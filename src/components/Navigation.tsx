@@ -23,7 +23,7 @@ const Navigation = () => {
 
   const menuItems = [
     { label: "Product", href: "/product" },
-    { label: "Use Cases", href: "/use-cases" },
+    { label: "Verticals", href: "/verticals" },
     { label: "Pricing", href: "/pricing" },
     { label: "About", href: "/about" },
   ];

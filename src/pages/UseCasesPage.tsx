@@ -1,4 +1,5 @@
 import UseCases from "@/components/UseCases";
+import { ShoppingBag, Monitor, Heart, DollarSign, GraduationCap, Home, Plane, Scale } from "lucide-react";
 
 const UseCasesPage = () => {
   return (
@@ -38,21 +39,21 @@ const UseCasesPage = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
             {[
-              { name: "E-commerce", icon: "🛍️", color: "from-purple-400 to-pink-400" },
-              { name: "SaaS", icon: "💻", color: "from-blue-400 to-cyan-400" },
-              { name: "Healthcare", icon: "🏥", color: "from-green-400 to-emerald-400" },
-              { name: "Finance", icon: "💰", color: "from-yellow-400 to-orange-400" },
-              { name: "Education", icon: "📚", color: "from-indigo-400 to-purple-400" },
-              { name: "Real Estate", icon: "🏠", color: "from-red-400 to-pink-400" },
-              { name: "Travel", icon: "✈️", color: "from-cyan-400 to-blue-400" },
-              { name: "Legal", icon: "⚖️", color: "from-gray-400 to-slate-400" },
+              { name: "E-commerce", icon: ShoppingBag, color: "from-purple-500 to-pink-500" },
+              { name: "SaaS", icon: Monitor, color: "from-blue-500 to-cyan-500" },
+              { name: "Healthcare", icon: Heart, color: "from-green-500 to-emerald-500" },
+              { name: "Finance", icon: DollarSign, color: "from-yellow-500 to-orange-500" },
+              { name: "Education", icon: GraduationCap, color: "from-indigo-500 to-purple-500" },
+              { name: "Real Estate", icon: Home, color: "from-red-500 to-pink-500" },
+              { name: "Travel", icon: Plane, color: "from-cyan-500 to-blue-500" },
+              { name: "Legal", icon: Scale, color: "from-slate-500 to-gray-600" },
             ].map((industry, i) => (
               <div
                 key={i}
                 className="bg-card rounded-2xl p-6 text-center hover-lift border border-border group"
               >
-                <div className={`text-4xl mb-3 inline-block p-4 rounded-xl bg-gradient-to-br ${industry.color} bg-opacity-10`}>
-                  {industry.icon}
+                <div className={`w-16 h-16 mx-auto mb-3 rounded-xl bg-gradient-to-br ${industry.color} flex items-center justify-center shadow-lg`}>
+                  <industry.icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-sm font-semibold text-text-primary group-hover:text-accent transition-colors">
                   {industry.name}

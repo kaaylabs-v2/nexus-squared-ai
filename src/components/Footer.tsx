@@ -15,6 +15,7 @@ const Footer = () => {
       title: "Company",
       links: [
         { label: "About", to: "/about" },
+        { label: "Verticals", to: "/verticals" },
         { label: "Contact", to: "/about" },
       ],
     },
