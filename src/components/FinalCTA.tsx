@@ -11,13 +11,12 @@ const FinalCTA = () => {
 
       <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center space-y-8">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-text-light tracking-tight">
-          Ready to see Nexus² <br className="hidden sm:block" />
-          <span className="text-gradient-accent">in action?</span>
+          Ready to help your visitors <br className="hidden sm:block" />
+          <span className="text-gradient-accent">find what they need?</span>
         </h2>
 
         <p className="text-xl text-text-muted-light max-w-2xl mx-auto leading-relaxed">
-          Book a personalized demo. We'll connect to your Jira, MySQL, or Google Workspace—live on
-          the call.
+          Start your free trial today. Add the widget to your site in under 5 minutes.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -25,7 +24,7 @@ const FinalCTA = () => {
             size="lg"
             className="bg-accent text-primary hover:bg-accent/90 font-bold text-lg px-10 glow-accent group"
           >
-            Book Your Demo
+            Start Free Trial
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>

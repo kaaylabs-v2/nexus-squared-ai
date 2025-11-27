@@ -3,34 +3,34 @@ import { Plug, MessageSquare, Layers, Users, UserCog, Lock } from "lucide-react"
 const CoreFeatures = () => {
   const features = [
     {
-      icon: Plug,
-      title: "Connect all your data",
-      description: "Plug into Jira, Google Workspace, MySQL, S3, flat files, websites.",
-    },
-    {
       icon: MessageSquare,
-      title: "Chat with your data",
-      description: "Natural language queries with precise, cited answers.",
+      title: "Conversational interface",
+      description: "Natural chat experience that feels helpful, not robotic.",
     },
     {
       icon: Layers,
-      title: "Enterprise RAG engine",
-      description: "Hybrid retrieval across structured & unstructured data with references.",
+      title: "Smart page suggestions",
+      description: "Understands intent and guides visitors to the right content.",
+    },
+    {
+      icon: Plug,
+      title: "One-line embed",
+      description: "Drop a single script tag into your site. Works everywhere.",
     },
     {
       icon: Users,
-      title: "Multi-tenant control",
-      description: "Isolated workspaces for each client, BU, or environment.",
+      title: "Custom branding",
+      description: "Colors, logo, welcome message—make it yours.",
     },
     {
       icon: UserCog,
-      title: "Admin & superadmin",
-      description: "Per-tenant dashboards plus global oversight for usage & health.",
+      title: "Conversation insights",
+      description: "See what visitors are looking for. Improve your content.",
     },
     {
       icon: Lock,
-      title: "Secure architecture",
-      description: "Fine-grained access, least-privilege design, audit logging.",
+      title: "Privacy-first",
+      description: "No data tracking. No cookies. Just helpful navigation.",
     },
   ];
 
@@ -38,8 +38,8 @@ const CoreFeatures = () => {
     <section className="py-24 lg:py-32 bg-bg-tertiary">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <h2 className="text-4xl md:text-5xl font-black text-center text-text-primary tracking-tight mb-16">
-          Everything you need to ship <br className="hidden sm:block" />
-          intelligent AI assistants
+          Everything you need for a <br className="hidden sm:block" />
+          perfect navigation experience
         </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

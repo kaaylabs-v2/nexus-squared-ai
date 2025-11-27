@@ -4,23 +4,23 @@ const UseCases = () => {
   const useCases = [
     {
       icon: BarChart3,
-      title: "AI agent for analytics",
-      description: "Let teams query MySQL and databases in plain English.",
+      title: "E-commerce sites",
+      description: "Help shoppers find products, check shipping, and navigate categories instantly.",
     },
     {
       icon: MessageCircle,
-      title: "Support & docs assistant",
-      description: "Answer questions using internal knowledge bases.",
+      title: "SaaS product sites",
+      description: "Guide visitors to pricing, features, docs—reduce support tickets.",
     },
     {
       icon: Wrench,
-      title: "Ops & engineering copilot",
-      description: "AI layer on Jira, logs, and runbooks for devs.",
+      title: "Corporate websites",
+      description: "Navigate services, case studies, contact forms without the maze.",
     },
     {
       icon: TrendingUp,
-      title: "Data room for leadership",
-      description: "Executives ask questions across all company data.",
+      title: "Portfolio & agency sites",
+      description: "Showcase projects, answer FAQs, book consultations—all in chat.",
     },
   ];
 

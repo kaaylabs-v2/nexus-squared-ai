@@ -26,13 +26,13 @@ const Hero = () => {
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-text-light leading-[1.1] tracking-tight">
-              Your AI layer over{" "}
-              <span className="text-gradient-accent">every business tool</span>
+              Help visitors{" "}
+              <span className="text-gradient-accent">navigate your site</span>{" "}
+              instantly
             </h1>
 
             <p className="text-lg md:text-xl text-text-muted-light max-w-xl leading-relaxed">
-              Connect Jira, Google Workspace, MySQL, S3, and 40+ data sources. Deploy
-              intelligent copilots that actually understand your business.
+              Add an intelligent navigation assistant to your website in minutes. Guide visitors to the right pages, answer common questions, and reduce bounce rates.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
