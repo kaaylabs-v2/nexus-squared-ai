@@ -1,7 +1,6 @@
 import CoreFeatures from "@/components/CoreFeatures";
 import HowItWorks from "@/components/HowItWorks";
 import DemoVideo from "@/components/DemoVideo";
-import ProductShowcase from "@/components/ProductShowcase";
 import Security from "@/components/Security";
 
 const Product = () => {
@@ -10,7 +9,6 @@ const Product = () => {
       <CoreFeatures />
       <DemoVideo />
       <HowItWorks />
-      <ProductShowcase />
       <Security />
     </div>
   );
