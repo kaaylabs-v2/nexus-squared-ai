@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,12 +16,16 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
   const menuItems = [
-    { label: "Product", href: "#product" },
-    { label: "Use Cases", href: "#use-cases" },
-    { label: "Integrations", href: "#integrations" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Resources", href: "#resources" },
+    { label: "Product", href: "/product" },
+    { label: "Use Cases", href: "/use-cases" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "About", href: "/about" },
   ];
 
   return (
@@ -33,24 +39,24 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-1 group">
+          <Link to="/" className="flex items-center gap-1 group">
             <span className="text-2xl font-black text-text-light">Nexus</span>
             <span className="text-xl font-black text-accent group-hover:scale-110 transition-transform">
               ²
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-8">
             {menuItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className="text-sm font-medium text-text-muted-light hover:text-text-light transition-colors relative group"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300" />
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -78,14 +84,13 @@ const Navigation = () => {
           <div className="lg:hidden bg-bg-card-dark border-t border-color-border-dark animate-slide-in">
             <div className="px-4 py-6 space-y-4">
               {menuItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
+                  to={item.href}
                   className="block text-text-muted-light hover:text-text-light transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
               <div className="pt-4 space-y-3 border-t border-color-border-dark">
                 <Button variant="ghost" className="w-full text-text-light">

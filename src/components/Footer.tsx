@@ -1,22 +1,37 @@
+import { Link } from "react-router-dom";
 import { Linkedin, Github, Twitter } from "lucide-react";
 
 const Footer = () => {
   const footerSections = [
     {
       title: "Product",
-      links: ["Use Cases", "Integrations", "Pricing", "Security"],
-    },
-    {
-      title: "Resources",
-      links: ["Documentation", "API Reference", "Blog", "Changelog"],
+      links: [
+        { label: "Features", to: "/product" },
+        { label: "Use Cases", to: "/use-cases" },
+        { label: "Pricing", to: "/pricing" },
+      ],
     },
     {
       title: "Company",
-      links: ["About", "Careers", "Contact"],
+      links: [
+        { label: "About", to: "/about" },
+        { label: "Contact", to: "/about" },
+      ],
+    },
+    {
+      title: "Resources",
+      links: [
+        { label: "Documentation", to: "#" },
+        { label: "Blog", to: "#" },
+        { label: "Support", to: "#" },
+      ],
     },
     {
       title: "Legal",
-      links: ["Privacy Policy", "Terms of Service", "Security"],
+      links: [
+        { label: "Privacy Policy", to: "#" },
+        { label: "Terms of Service", to: "#" },
+      ],
     },
   ];
 
@@ -26,14 +41,14 @@ const Footer = () => {
         <div className="grid md:grid-cols-5 gap-12 mb-12">
           {/* Brand column */}
           <div className="md:col-span-1">
-            <a href="#" className="flex items-center gap-1 group mb-4">
+            <Link to="/" className="flex items-center gap-1 group mb-4">
               <span className="text-2xl font-black text-text-light">Nexus</span>
               <span className="text-xl font-black text-accent group-hover:scale-110 transition-transform">
                 ²
               </span>
-            </a>
+            </Link>
             <p className="text-text-muted-light text-sm leading-relaxed">
-              Your AI layer over every business tool.
+              Your smart website navigation assistant.
             </p>
           </div>
 
@@ -42,14 +57,14 @@ const Footer = () => {
             <div key={i}>
               <h3 className="text-text-light font-bold mb-4">{section.title}</h3>
               <ul className="space-y-3">
-                {section.links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
+                {section.links.map((link, j) => (
+                  <li key={j}>
+                    <Link
+                      to={link.to}
                       className="text-text-muted-light hover:text-text-light transition-colors text-sm"
                     >
-                      {link}
-                    </a>
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
