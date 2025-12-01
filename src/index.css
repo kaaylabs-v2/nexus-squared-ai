@@ -8,29 +8,29 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Nexus² Premium Design System */
+    /* Nexus² Premium Design System - Light Mode */
     
     /* Base Backgrounds */
-    --bg-primary: 240 6% 6%;           /* #0A0A0F - Deep space black */
-    --bg-secondary: 220 9% 98%;        /* #FAFBFC - Warm off-white */
-    --bg-tertiary: 220 9% 97%;         /* #F4F5F7 - Subtle gray */
-    --bg-card: 0 0% 100%;              /* #FFFFFF - Pure white */
-    --bg-card-dark: 240 10% 8%;        /* #12121A - Dark mode cards */
+    --bg-primary: 220 9% 98%;           /* Light mode: off-white */
+    --bg-secondary: 220 9% 98%;         /* #FAFBFC - Warm off-white */
+    --bg-tertiary: 220 9% 97%;          /* #F4F5F7 - Subtle gray */
+    --bg-card: 0 0% 100%;               /* #FFFFFF - Pure white */
+    --bg-card-dark: 220 9% 95%;         /* Light mode: light gray */
     
     /* Brand Colors */
-    --color-primary: 211 54% 24%;      /* #1E3A5F - Deep navy */
-    --color-accent: 169 100% 45%;      /* #00E5C7 - Electric cyan */
-    --color-accent-glow: 169 100% 45%; /* For glow effects */
+    --color-primary: 211 54% 24%;       /* #1E3A5F - Deep navy */
+    --color-accent: 169 100% 45%;       /* #00E5C7 - Electric cyan */
+    --color-accent-glow: 169 100% 45%;  /* For glow effects */
     
     /* Text Colors */
-    --text-primary: 222 47% 11%;       /* #0F172A - Near-black */
-    --text-secondary: 215 16% 47%;     /* #64748B - Muted gray */
-    --text-light: 210 40% 98%;         /* #F8FAFC - Light text */
-    --text-muted-light: 214 32% 65%;   /* #94A3B8 - Muted on dark */
+    --text-primary: 222 47% 11%;        /* #0F172A - Near-black */
+    --text-secondary: 215 16% 47%;      /* #64748B - Muted gray */
+    --text-light: 222 47% 11%;          /* Light mode: dark text */
+    --text-muted-light: 215 16% 47%;    /* Light mode: muted */
     
     /* Borders */
-    --color-border: 214 32% 91%;       /* #E2E8F0 - Subtle borders */
-    --color-border-dark: 217 33% 17%;  /* #1E293B - Dark borders */
+    --color-border: 214 32% 91%;        /* #E2E8F0 - Subtle borders */
+    --color-border-dark: 214 32% 85%;   /* Light mode: visible borders */
     
     /* Semantic Mappings */
     --background: var(--bg-secondary);
@@ -43,7 +43,7 @@ All colors MUST be HSL.
     --popover-foreground: var(--text-primary);
     
     --primary: var(--color-primary);
-    --primary-foreground: var(--text-light);
+    --primary-foreground: 210 40% 98%;
     
     --secondary: var(--bg-tertiary);
     --secondary-foreground: var(--text-primary);
@@ -55,7 +55,7 @@ All colors MUST be HSL.
     --accent-foreground: var(--color-primary);
     
     --destructive: 0 84% 60%;
-    --destructive-foreground: var(--text-light);
+    --destructive-foreground: 210 40% 98%;
     
     --border: var(--color-border);
     --input: var(--color-border);
@@ -64,9 +64,68 @@ All colors MUST be HSL.
     --radius: 1rem;
     
     /* Custom Properties */
+    --hero-gradient-start: 220 9% 95%;
+    --hero-gradient-end: 220 14% 90%;
+    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .dark {
+    /* Nexus² Premium Design System - Dark Mode */
+    
+    /* Base Backgrounds */
+    --bg-primary: 240 6% 6%;            /* #0A0A0F - Deep space black */
+    --bg-secondary: 240 6% 6%;          /* Dark mode: space black */
+    --bg-tertiary: 240 10% 10%;         /* Slightly lighter */
+    --bg-card: 240 10% 8%;              /* Dark cards */
+    --bg-card-dark: 240 10% 8%;         /* #12121A - Dark mode cards */
+    
+    /* Brand Colors */
+    --color-primary: 211 54% 24%;       /* #1E3A5F - Deep navy */
+    --color-accent: 169 100% 45%;       /* #00E5C7 - Electric cyan */
+    --color-accent-glow: 169 100% 45%;  /* For glow effects */
+    
+    /* Text Colors */
+    --text-primary: 210 40% 98%;        /* #F8FAFC - Light text */
+    --text-secondary: 214 32% 65%;      /* #94A3B8 - Muted */
+    --text-light: 210 40% 98%;          /* #F8FAFC - Light text */
+    --text-muted-light: 214 32% 65%;    /* #94A3B8 - Muted on dark */
+    
+    /* Borders */
+    --color-border: 217 33% 17%;        /* Dark borders */
+    --color-border-dark: 217 33% 17%;   /* #1E293B - Dark borders */
+    
+    /* Semantic Mappings */
+    --background: var(--bg-secondary);
+    --foreground: var(--text-primary);
+    
+    --card: var(--bg-card);
+    --card-foreground: var(--text-primary);
+    
+    --popover: var(--bg-card);
+    --popover-foreground: var(--text-primary);
+    
+    --primary: var(--color-primary);
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: var(--bg-tertiary);
+    --secondary-foreground: var(--text-primary);
+    
+    --muted: var(--bg-tertiary);
+    --muted-foreground: var(--text-secondary);
+    
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-primary);
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: var(--color-border);
+    --input: var(--color-border);
+    --ring: var(--color-accent);
+    
+    /* Custom Properties */
     --hero-gradient-start: 240 6% 6%;
     --hero-gradient-end: 222 18% 8%;
-    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 
