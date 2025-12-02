@@ -1,0 +1,34 @@
+{
+    "family": "nexus-services",
+    "taskRoleArn": "arn:aws:iam::891377352857:role/ecsanywhererole",
+    "containerDefinitions": [
+      {
+        "name": "nexus-services",
+        "image": "891377352857.dkr.ecr.us-east-1.amazonaws.com/nexus-services:GIT_COMMIT",
+        "cpu": 400,
+        "memory": 400,
+        "memoryReservation": 300,
+        "volumesFrom": [],
+        "portMappings": [
+          {
+            "hostPort": 0,
+            "containerPort": 80,
+            "protocol": "tcp"
+          }
+        ],
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "GROUP_NAME",
+            "awslogs-region": "us-east-1",
+            "awslogs-stream-prefix": "nexus-services"
+          }
+        },
+        "essential": true,
+        "environment": [
+        ],
+        "mountPoints": []
+      }
+    ]
+  }
+  

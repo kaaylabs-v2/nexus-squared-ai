@@ -1,0 +1,67 @@
+
+startDeploy()
+{
+# Create a new task definition for this build
+
+sed -e "s;GIT_COMMIT;${IMAGE_VERSION};g" ${JSON_FILE}.json > ${JSON_FILE}-new-${BUILD_NUMBER}.json
+
+sed -e "s;GROUP_NAME;${GIT_BRANCH};g" ${JSON_FILE}-new-${BUILD_NUMBER}.json > ${JSON_FILE}-${BUILD_NUMBER}.json
+
+
+cat ${JSON_FILE}-${BUILD_NUMBER}.json
+
+aws ecs register-task-definition --family ${TASK_FAMILY} --cli-input-json file://${JSON_FILE}-${BUILD_NUMBER}.json --cli-input-json file://${JSON_FILE}-${BUILD_NUMBER}.json --region us-east-1 --profile new-kaaylabs
+
+# Update the service with the new task definition and desired count
+TASK_REVISION=`aws ecs describe-task-definition --task-definition ${TASK_FAMILY} --region us-east-1 --profile new-kaaylabs | egrep "revision" | tr "/" " " | awk '{print $2}' | sed 's/"$//'`
+echo $TASK_REVISION
+DESIRED_COUNT=`aws ecs describe-services --cluster ${CLUSTER} --services ${SERVICE_NAME}  --region us-east-1 --profile new-kaaylabs  | egrep "desiredCount" | tr "/" " " | awk '{print $2}' | sed 's/,$//'`
+echo $DESIRED_COUNT
+
+aws ecs stop-task --cluster ${CLUSTER} --task ${OLD_TASK_ID} --region us-east-1 --profile new-kaaylabs
+
+aws ecs update-service --cluster ${CLUSTER} --service ${SERVICE_NAME} --desired-count 1 --task-definition ${TASK_FAMILY} --force-new-deployment --region us-east-1 --profile new-kaaylabs
+
+# Jenkins Job wait until service is avaliable in cluster
+aws ecs wait services-stable --cluster ${CLUSTER} --services ${SERVICE_NAME} --region us-east-1 --profile new-kaaylabs
+if [ $? -eq 0 ]; then 
+echo "Docker build got success"
+else 
+echo "Docker build was failed"
+exit 1
+fi
+rm -rf ${JSON_FILE}-${BUILD_NUMBER}.json
+rm -rf ${JSON_FILE}-new-${BUILD_NUMBER}.json
+}
+
+
+if [ "$GIT_BRANCH" = "development" ]
+then
+SERVICE_NAME="dev-sandbox-service"
+IMAGE_VERSION="${GIT_BRANCH}-${BUILD_NUMBER}"
+TASK_FAMILY="dev-sandbox-service"
+CLUSTER="dev-oralia"
+START_CMD="start"
+JSON_FILE="oralia-sandbox-dev"
+startDeploy
+elif [ "$GIT_BRANCH" = "main" ]
+then
+SERVICE_NAME="nexus-services"
+IMAGE_VERSION="${GIT_BRANCH}-${BUILD_NUMBER}"
+TASK_FAMILY="nexus-services"
+CLUSTER="production"
+START_CMD="start"
+JSON_FILE="nexus"
+startDeploy
+elif [ "$GIT_BRANCH" = "uat" ]
+then
+SERVICE_NAME="uat-generic-chatbot-services"
+IMAGE_VERSION="${GIT_BRANCH}-${BUILD_NUMBER}"
+TASK_FAMILY="dev-generic-chatbot-services"
+CLUSTER="production"
+START_CMD="start"
+JSON_FILE="dev-generic-chatbot-services"
+startDeploy
+else
+echo "Skipping a deployment because this branch is not permitted for docker deployment: ${GIT_BRANCH}"
+fi
