@@ -17,7 +17,7 @@ const Verticals = () => {
         { metric: "58%", label: "Fewer support tickets" }
       ],
       caseStudy: {
-        company: "LuxeHome Furnishings",
+        company: "Leading Home Furnishings Retailer",
         problem: "7,000+ products, 65% bounce rate, customers couldn't navigate categories.",
         implementation: "Added Nexus² widget trained on product catalog, dimensions, materials, and styles.",
         outcome: "Bounce rate dropped to 38%. Average order value increased 42%. Support tickets about 'where to find' items down 71%."
@@ -36,7 +36,7 @@ const Verticals = () => {
         { metric: "41%", label: "Lower support costs" }
       ],
       caseStudy: {
-        company: "DataSync Analytics",
+        company: "B2B Analytics Platform",
         problem: "Users confused by 12+ features, unclear pricing, 80% never reached signup.",
         implementation: "Deployed Nexus² with feature comparisons, pricing calculator, and API docs integrated.",
         outcome: "Trial signups increased 4.1x. Sales calls reduced by half as questions answered upfront. Expansion revenue up 28%."
@@ -55,7 +55,7 @@ const Verticals = () => {
         { metric: "89%", label: "Patient satisfaction" }
       ],
       caseStudy: {
-        company: "CityHealth Medical Group",
+        company: "Regional Medical Group",
         problem: "12 locations, 140+ providers, phone lines overwhelmed with 'where do I go' questions.",
         implementation: "Nexus² integrated with provider directory, insurance verification, and online scheduling.",
         outcome: "Phone volume dropped 68%. Online bookings increased 487%. Staff saved 35 hours/week on basic inquiries."
@@ -74,7 +74,7 @@ const Verticals = () => {
         { metric: "91%", label: "Compliance maintained" }
       ],
       caseStudy: {
-        company: "Meridian Credit Union",
+        company: "Mid-Size Credit Union",
         problem: "Complex loan products, compliance restrictions, 5% application completion rate.",
         implementation: "Nexus² widget with pre-approved messaging, rate calculators, and eligibility guidance.",
         outcome: "Applications up 281%. Completion rate jumped to 23%. Zero compliance issues. Members rate experience 4.7/5."
@@ -93,7 +93,7 @@ const Verticals = () => {
         { metric: "85%", label: "Faster response time" }
       ],
       caseStudy: {
-        company: "Riverside Community College",
+        company: "State Community College",
         problem: "8,000 pages of content, prospective students couldn't find application requirements or deadlines.",
         implementation: "Nexus² trained on programs, admission criteria, financial aid, and campus resources.",
         outcome: "Applications increased 67%. Admissions staff inquiries down 54%. Tour bookings up 312%. Students find answers in under 30 seconds."
@@ -112,7 +112,7 @@ const Verticals = () => {
         { metric: "43%", label: "Faster sales cycle" }
       ],
       caseStudy: {
-        company: "Metro Realty Partners",
+        company: "Regional Real Estate Brokerage",
         problem: "450+ active listings, buyers overwhelmed by search filters, 12% inquiry rate.",
         implementation: "Nexus² connected to MLS data, neighborhood info, school ratings, and agent calendars.",
         outcome: "Inquiries jumped to 61%. Showing requests up 8x. Agents close deals 43% faster. Average commission increased 18%."
@@ -131,7 +131,7 @@ const Verticals = () => {
         { metric: "91%", label: "Customer satisfaction" }
       ],
       caseStudy: {
-        company: "Wanderlust Escapes",
+        company: "Boutique Travel Agency",
         problem: "200+ tour packages, complex pricing, 89% cart abandonment, users confused about what's included.",
         implementation: "Nexus² widget with package details, availability calendar, payment plans, and booking assistance.",
         outcome: "Cart abandonment dropped to 21%. Bookings increased 4.6x. Upsells (insurance, upgrades) up 156%. Revenue +$2.1M annually."
@@ -150,7 +150,7 @@ const Verticals = () => {
         { metric: "71%", label: "Higher retention" }
       ],
       caseStudy: {
-        company: "Harrison & Associates Law",
+        company: "Multi-Practice Law Firm",
         problem: "8 practice areas, visitors couldn't identify right attorney, 4% consultation conversion rate.",
         implementation: "Nexus² with practice area guidance, attorney bios, case types, and online scheduling.",
         outcome: "Consultations up 6.2x. Intake calls down 60% (widget pre-qualifies). Client retention +71%. Partner revenue increased $400k/year."
