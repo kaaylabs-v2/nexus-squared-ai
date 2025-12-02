@@ -15,10 +15,10 @@
     --bg-card: 0 0% 100%;                 /* Pure white */
     --bg-card-dark: 40 10% 96%;           /* Light cards */
     
-    /* Brand Colors - Cohere Coral */
+    /* Brand Colors - Purple/Violet */
     --color-primary: 220 9% 12%;          /* Near black for text/buttons */
-    --color-accent: 14 90% 62%;           /* Coral/salmon #F27052 */
-    --color-accent-glow: 14 90% 62%;      /* For glow effects */
+    --color-accent: 262 83% 58%;          /* Purple/Violet */
+    --color-accent-glow: 262 83% 65%;     /* For glow effects */
     
     /* Text Colors */
     --text-primary: 220 9% 12%;           /* Near black */
@@ -79,8 +79,8 @@
     
     /* Brand Colors */
     --color-primary: 0 0% 100%;           /* White for dark mode */
-    --color-accent: 14 90% 62%;           /* Coral stays the same */
-    --color-accent-glow: 14 90% 62%;      /* For glow effects */
+    --color-accent: 262 83% 65%;          /* Purple/Violet (slightly brighter for dark) */
+    --color-accent-glow: 262 83% 70%;     /* For glow effects */
     
     /* Text Colors */
     --text-primary: 0 0% 98%;             /* Near white */
@@ -147,7 +147,7 @@
 
 @layer utilities {
   .text-gradient-accent {
-    @apply bg-gradient-to-r from-accent to-orange-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent to-violet-400 bg-clip-text text-transparent;
   }
   
   .glow-accent {
