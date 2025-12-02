@@ -1,11 +1,9 @@
 const SocialProof = () => {
   const companies = [
-    "Oracle",
-    "Dell Technologies",
-    "RBC",
-    "LG CNS",
-    "Fujitsu",
-    "Bell",
+    "Pampered Chef",
+    "Barcodes",
+    "Mouser",
+    "JM Test",
   ];
 
   return (
