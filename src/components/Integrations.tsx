@@ -1,15 +1,28 @@
+import { 
+  FileText, 
+  ShoppingBag, 
+  Droplets, 
+  Newspaper, 
+  Tag, 
+  BookOpen, 
+  Target, 
+  Globe, 
+  HelpCircle, 
+  Sparkles 
+} from "lucide-react";
+
 const Integrations = () => {
   const integrations = [
-    { name: "WordPress", category: "CMS" },
-    { name: "Shopify", category: "E-commerce" },
-    { name: "Webflow", category: "Website Builder" },
-    { name: "Blog Posts", category: "Content" },
-    { name: "Product Pages", category: "E-commerce" },
-    { name: "Documentation", category: "Knowledge Base" },
-    { name: "Landing Pages", category: "Marketing" },
-    { name: "HTML/CSS", category: "Static Sites" },
-    { name: "FAQs", category: "Support" },
-    { name: "Any Website", category: "Universal" },
+    { name: "WordPress", category: "CMS", icon: FileText },
+    { name: "Shopify", category: "E-commerce", icon: ShoppingBag },
+    { name: "Webflow", category: "Website Builder", icon: Droplets },
+    { name: "Blog Posts", category: "Content", icon: Newspaper },
+    { name: "Product Pages", category: "E-commerce", icon: Tag },
+    { name: "Documentation", category: "Knowledge Base", icon: BookOpen },
+    { name: "Landing Pages", category: "Marketing", icon: Target },
+    { name: "HTML/CSS", category: "Static Sites", icon: Globe },
+    { name: "FAQs", category: "Support", icon: HelpCircle },
+    { name: "Any Website", category: "Universal", icon: Sparkles },
   ];
 
   return (
@@ -25,33 +38,27 @@ const Integrations = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {integrations.map((integration, i) => (
-            <div
-              key={i}
-              className="bg-card border border-border rounded-2xl p-6 hover:border-accent/50 transition-all duration-300 group"
-            >
-              <div className="text-center space-y-3">
-                <div className="text-3xl">
-                  {integration.name === "WordPress" && "📝"}
-                  {integration.name === "Shopify" && "🛍️"}
-                  {integration.name === "Webflow" && "💧"}
-                  {integration.name === "Blog Posts" && "📰"}
-                  {integration.name === "Product Pages" && "🏷️"}
-                  {integration.name === "Documentation" && "📚"}
-                  {integration.name === "Landing Pages" && "🎯"}
-                  {integration.name === "HTML/CSS" && "🌐"}
-                  {integration.name === "FAQs" && "❓"}
-                  {integration.name === "Any Website" && "✨"}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1 group-hover:text-accent transition-colors font-sans">
-                    {integration.name}
-                  </h3>
-                  <p className="text-xs text-muted-foreground font-sans">{integration.category}</p>
+          {integrations.map((integration, i) => {
+            const Icon = integration.icon;
+            return (
+              <div
+                key={i}
+                className="bg-card border border-border rounded-2xl p-6 hover:border-accent/50 transition-all duration-300 group"
+              >
+                <div className="text-center space-y-3">
+                  <div className="flex justify-center">
+                    <Icon className="w-8 h-8 text-muted-foreground group-hover:text-accent transition-colors" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1 group-hover:text-accent transition-colors font-sans">
+                      {integration.name}
+                    </h3>
+                    <p className="text-xs text-muted-foreground font-sans">{integration.category}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
