@@ -23,25 +23,36 @@ const Navigation = () => {
   }, [location.pathname]);
 
   const menuItems = [
+    { label: "What is Nexus²", href: "/#what-is-nexus", isAnchor: true },
     { label: "Product", href: "/product" },
     { label: "Verticals", href: "/verticals" },
     { label: "Pricing", href: "/pricing" },
     { label: "About", href: "/about" },
   ];
 
+  const handleAnchorClick = (e: React.MouseEvent, href: string) => {
+    const hash = href.split('#')[1];
+    if (location.pathname === '/') {
+      e.preventDefault();
+      const element = document.getElementById(hash);
+      element?.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-bg-primary/80 backdrop-blur-xl border-b border-color-border-dark"
-          : "bg-bg-primary/60 backdrop-blur-sm"
+          ? "bg-background/80 backdrop-blur-xl border-b border-border"
+          : "bg-background/60 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-1 group">
-            <span className="text-2xl font-black text-text-light">Nexus</span>
+            <span className="text-2xl font-black text-foreground">Nexus</span>
             <span className="text-xl font-black text-accent group-hover:scale-110 transition-transform">
               ²
             </span>
@@ -53,7 +64,8 @@ const Navigation = () => {
               <Link
                 key={item.label}
                 to={item.href}
-                className="text-sm font-medium text-text-muted-light hover:text-text-light transition-colors relative group"
+                onClick={item.isAnchor ? (e) => handleAnchorClick(e, item.href) : undefined}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300" />
@@ -64,7 +76,7 @@ const Navigation = () => {
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-4">
             <ThemeToggle />
-            <Button variant="ghost" size="sm" className="text-text-light hover:text-accent">
+            <Button variant="ghost" size="sm" className="text-foreground hover:text-accent">
               Sign in
             </Button>
             <Button size="sm" className="bg-accent text-primary hover:bg-accent/90 font-medium">
@@ -77,7 +89,7 @@ const Navigation = () => {
             <ThemeToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-text-light hover:text-accent transition-colors"
+              className="text-foreground hover:text-accent transition-colors"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -86,19 +98,20 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-bg-card-dark border-t border-color-border-dark animate-slide-in">
+          <div className="lg:hidden bg-card border-t border-border animate-slide-in">
             <div className="px-4 py-6 space-y-4">
               {menuItems.map((item) => (
                 <Link
                   key={item.label}
                   to={item.href}
-                  className="block text-text-muted-light hover:text-text-light transition-colors py-2"
+                  onClick={item.isAnchor ? (e) => handleAnchorClick(e, item.href) : undefined}
+                  className="block text-muted-foreground hover:text-foreground transition-colors py-2"
                 >
                   {item.label}
                 </Link>
               ))}
-              <div className="pt-4 space-y-3 border-t border-color-border-dark">
-                <Button variant="ghost" className="w-full text-text-light">
+              <div className="pt-4 space-y-3 border-t border-border">
+                <Button variant="ghost" className="w-full text-foreground">
                   Sign in
                 </Button>
                 <Button className="w-full bg-accent text-primary hover:bg-accent/90">
