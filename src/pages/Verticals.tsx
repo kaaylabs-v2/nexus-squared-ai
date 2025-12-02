@@ -161,19 +161,19 @@ const Verticals = () => {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="py-24 lg:py-32 bg-gradient-to-b from-bg-primary to-[#0F1419]">
+      <section className="py-24 lg:py-32 bg-gradient-to-b from-background to-secondary">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-black text-text-light tracking-tight mb-6">
+          <h1 className="text-5xl md:text-6xl font-black text-foreground tracking-tight mb-6">
             Built for your <span className="text-gradient-accent">industry</span>
           </h1>
-          <p className="text-xl text-text-muted-light leading-relaxed">
+          <p className="text-xl text-muted-foreground leading-relaxed">
             Real case studies from businesses using Nexus² to transform their website experience
           </p>
         </div>
       </section>
 
       {/* Verticals Grid */}
-      <section className="py-24 bg-bg-secondary">
+      <section className="py-24 bg-secondary/50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-32">
           {verticals.map((vertical, i) => (
             <div key={i} className="space-y-12">
@@ -183,26 +183,26 @@ const Verticals = () => {
                   <vertical.icon className="w-12 h-12 text-white stroke-[1.5]" />
                 </div>
                 <div>
-                  <h2 className="text-4xl font-black text-text-primary mb-2">{vertical.name}</h2>
-                  <p className="text-xl text-text-secondary">{vertical.tagline}</p>
+                  <h2 className="text-4xl font-black text-foreground mb-2">{vertical.name}</h2>
+                  <p className="text-xl text-muted-foreground">{vertical.tagline}</p>
                 </div>
               </div>
 
               {/* Challenge & Solution */}
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="bg-card p-8 rounded-2xl border border-border">
-                  <h3 className="text-lg font-bold text-text-primary mb-4 flex items-center gap-2">
+                  <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
                     <span className="w-8 h-8 rounded-lg bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 text-sm font-black">!</span>
                     The Challenge
                   </h3>
-                  <p className="text-text-secondary leading-relaxed">{vertical.challenge}</p>
+                  <p className="text-muted-foreground leading-relaxed">{vertical.challenge}</p>
                 </div>
                 <div className="bg-card p-8 rounded-2xl border border-border">
-                  <h3 className="text-lg font-bold text-text-primary mb-4 flex items-center gap-2">
+                  <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
                     <span className="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 text-sm font-black">✓</span>
                     How Nexus² Helps
                   </h3>
-                  <p className="text-text-secondary leading-relaxed">{vertical.solution}</p>
+                  <p className="text-muted-foreground leading-relaxed">{vertical.solution}</p>
                 </div>
               </div>
 
@@ -213,7 +213,7 @@ const Verticals = () => {
                     <div className={`text-4xl font-black mb-2 bg-gradient-to-r ${vertical.gradient} bg-clip-text text-transparent`}>
                       {result.metric}
                     </div>
-                    <div className="text-sm text-text-secondary font-medium">{result.label}</div>
+                    <div className="text-sm text-muted-foreground font-medium">{result.label}</div>
                   </div>
                 ))}
               </div>
@@ -225,20 +225,20 @@ const Verticals = () => {
                     Case Study
                   </span>
                 </div>
-                <h3 className="text-2xl font-black text-text-primary mb-6">{vertical.caseStudy.company}</h3>
+                <h3 className="text-2xl font-black text-foreground mb-6">{vertical.caseStudy.company}</h3>
                 
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-bold text-text-primary mb-2">The Problem:</h4>
-                    <p className="text-text-secondary leading-relaxed">{vertical.caseStudy.problem}</p>
+                    <h4 className="font-bold text-foreground mb-2">The Problem:</h4>
+                    <p className="text-muted-foreground leading-relaxed">{vertical.caseStudy.problem}</p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-text-primary mb-2">The Implementation:</h4>
-                    <p className="text-text-secondary leading-relaxed">{vertical.caseStudy.implementation}</p>
+                    <h4 className="font-bold text-foreground mb-2">The Implementation:</h4>
+                    <p className="text-muted-foreground leading-relaxed">{vertical.caseStudy.implementation}</p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-text-primary mb-2">The Outcome:</h4>
-                    <p className="text-text-secondary leading-relaxed">{vertical.caseStudy.outcome}</p>
+                    <h4 className="font-bold text-foreground mb-2">The Outcome:</h4>
+                    <p className="text-muted-foreground leading-relaxed">{vertical.caseStudy.outcome}</p>
                   </div>
                 </div>
               </div>
@@ -248,12 +248,12 @@ const Verticals = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 lg:py-32 bg-gradient-to-b from-bg-primary to-[#0F1419]">
+      <section className="py-24 lg:py-32 bg-gradient-to-b from-background to-secondary">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-text-light tracking-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-6">
             Ready to transform your industry?
           </h2>
-          <p className="text-xl text-text-muted-light mb-8">
+          <p className="text-xl text-muted-foreground mb-8">
             Join thousands of businesses using Nexus² to help visitors find what they need.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -262,7 +262,7 @@ const Verticals = () => {
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Link to="/pricing">
-              <Button size="lg" variant="outline" className="border-color-border-dark bg-transparent text-text-light hover:bg-text-light/5">
+              <Button size="lg" variant="outline" className="border-border text-foreground hover:bg-secondary">
                 View Pricing
               </Button>
             </Link>
