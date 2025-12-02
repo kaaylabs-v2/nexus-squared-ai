@@ -3,7 +3,7 @@ import { ArrowRight, Play } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-b from-bg-primary to-[#0F1419] overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-gradient-to-b from-background to-secondary overflow-hidden">
       {/* Subtle grid pattern overlay */}
       <div 
         className="absolute inset-0 opacity-[0.03]"
@@ -25,13 +25,13 @@ const Hero = () => {
               Enterprise AI Platform
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-text-light leading-[1.1] tracking-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-foreground leading-[1.1] tracking-tight">
               Help visitors{" "}
               <span className="text-gradient-accent">navigate your site</span>{" "}
               instantly
             </h1>
 
-            <p className="text-lg md:text-xl text-text-muted-light max-w-xl leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
               Add an intelligent navigation assistant to your website in minutes. Guide visitors to the right pages, answer common questions, and reduce bounce rates.
             </p>
 
@@ -46,7 +46,7 @@ const Hero = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-color-border-dark bg-transparent text-text-light hover:bg-text-light/5 font-medium text-base"
+                className="border-border bg-transparent text-foreground hover:bg-foreground/5 font-medium text-base"
               >
                 <Play className="mr-2 w-5 h-5" />
                 Watch 2-min Overview
@@ -73,11 +73,11 @@ const Hero = () => {
               ].map((node, i) => (
                 <div
                   key={i}
-                  className={`absolute ${node.position} w-20 h-20 rounded-2xl bg-bg-card-dark/60 backdrop-blur-xl border border-color-border-dark flex flex-col items-center justify-center gap-1 animate-fade-up hover:scale-110 transition-transform cursor-pointer`}
+                  className={`absolute ${node.position} w-20 h-20 rounded-2xl bg-card/80 backdrop-blur-xl border border-border flex flex-col items-center justify-center gap-1 animate-fade-up hover:scale-110 transition-transform cursor-pointer`}
                   style={{ animationDelay: `${400 + i * 100}ms` }}
                 >
                   <span className="text-2xl">{node.icon}</span>
-                  <span className="text-xs text-text-muted-light font-mono">{node.label}</span>
+                  <span className="text-xs text-muted-foreground font-mono">{node.label}</span>
                 </div>
               ))}
 
