@@ -15,7 +15,11 @@ import {
   ClipboardList,
   BarChart3,
   Lock,
-  CheckCircle
+  CheckCircle,
+  GraduationCap,
+  Stethoscope,
+  Factory,
+  Store
 } from "lucide-react";
 
 const WhatIsNexusPage = () => {
@@ -85,6 +89,57 @@ const WhatIsNexusPage = () => {
     "Where can I find my order history?",
     "Take me to the consultant resources page",
     "Compare these two items for me",
+  ];
+
+  const industryUseCases = [
+    {
+      icon: GraduationCap,
+      title: "Education",
+      color: "bg-blue-500/10 text-blue-500",
+      examples: [
+        "What courses are available for spring semester?",
+        "How do I apply for financial aid?",
+        "Take me to the course registration page",
+        "What are the library hours this week?",
+        "Show me scholarship opportunities for STEM majors",
+      ],
+    },
+    {
+      icon: Stethoscope,
+      title: "Healthcare",
+      color: "bg-rose-500/10 text-rose-500",
+      examples: [
+        "How do I schedule an appointment?",
+        "Where can I find my test results?",
+        "What insurance plans do you accept?",
+        "Take me to the patient portal login",
+        "Find a specialist near me",
+      ],
+    },
+    {
+      icon: Factory,
+      title: "Industrial",
+      color: "bg-amber-500/10 text-amber-500",
+      examples: [
+        "Show me the safety compliance documents",
+        "Where can I find equipment manuals?",
+        "What's the status of order #45921?",
+        "Take me to the parts catalog",
+        "How do I submit a maintenance request?",
+      ],
+    },
+    {
+      icon: Store,
+      title: "E-commerce",
+      color: "bg-emerald-500/10 text-emerald-500",
+      examples: [
+        "Show me dresses under $100 in size medium",
+        "Where's my order? Tracking #ABC123",
+        "Compare these two laptops for me",
+        "What's your return policy?",
+        "Find me gifts for a 10-year-old",
+      ],
+    },
   ];
 
   return (
@@ -191,6 +246,42 @@ const WhatIsNexusPage = () => {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Industry Use Cases */}
+          <div className="mb-24">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
+              Built for Every Industry
+            </h2>
+            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+              See how Nexus² transforms user experiences across different verticals
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              {industryUseCases.map((industry, i) => (
+                <div
+                  key={i}
+                  className="bg-card p-6 rounded-2xl border border-border hover:border-accent/30 transition-all"
+                >
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${industry.color.split(' ')[0]}`}>
+                      <industry.icon className={`w-5 h-5 ${industry.color.split(' ')[1]}`} />
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground">{industry.title}</h3>
+                  </div>
+                  <div className="space-y-2">
+                    {industry.examples.map((example, j) => (
+                      <div 
+                        key={j}
+                        className="bg-secondary/50 rounded-lg px-3 py-2 text-sm text-muted-foreground italic"
+                      >
+                        "{example}"
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
