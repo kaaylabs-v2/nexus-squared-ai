@@ -13,7 +13,7 @@ const Integrations = () => {
   ];
 
   return (
-    <section id="integrations" className="py-24 lg:py-32 bg-gradient-to-b from-bg-primary to-[#0F1419] relative overflow-hidden">
+    <section id="integrations" className="py-24 lg:py-32 bg-secondary relative overflow-hidden">
       {/* Grid pattern overlay */}
       <div 
         className="absolute inset-0 opacity-[0.02]"
@@ -26,10 +26,10 @@ const Integrations = () => {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-text-light tracking-tight mb-4">
+          <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-4">
             Works on any platform
           </h2>
-          <p className="text-xl text-text-muted-light">
+          <p className="text-xl text-muted-foreground">
             WordPress, Shopify, Webflow, custom sites—if it has HTML, it works.
           </p>
         </div>
@@ -38,7 +38,7 @@ const Integrations = () => {
           {integrations.map((integration, i) => (
             <div
               key={i}
-              className="bg-bg-card-dark/40 backdrop-blur-xl border border-color-border-dark rounded-2xl p-6 hover:border-accent/50 hover:bg-bg-card-dark/60 transition-all duration-300 hover-lift group"
+              className="bg-card/80 backdrop-blur-xl border border-border rounded-2xl p-6 hover:border-accent/50 hover:bg-card transition-all duration-300 hover-lift group"
             >
               <div className="text-center space-y-3">
                 <div className="text-3xl">
@@ -54,10 +54,10 @@ const Integrations = () => {
                   {integration.name === "Any Website" && "✨"}
                 </div>
                 <div>
-                  <h3 className="font-bold text-text-light mb-1 group-hover:text-accent transition-colors">
+                  <h3 className="font-bold text-foreground mb-1 group-hover:text-accent transition-colors">
                     {integration.name}
                   </h3>
-                  <p className="text-xs text-text-muted-light font-mono">{integration.category}</p>
+                  <p className="text-xs text-muted-foreground font-mono">{integration.category}</p>
                 </div>
               </div>
             </div>

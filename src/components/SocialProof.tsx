@@ -9,16 +9,16 @@ const SocialProof = () => {
   ];
 
   return (
-    <section className="py-12">
+    <section className="py-12 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <p className="text-center text-text-muted-light text-sm font-medium mb-8 tracking-wide uppercase">
+        <p className="text-center text-muted-foreground text-sm font-medium mb-8 tracking-wide uppercase">
           Trusted by data-driven teams at
         </p>
         <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
           {companies.map((company, i) => (
             <div
               key={i}
-              className="text-text-muted-light/60 font-satoshi font-bold text-lg hover:text-text-light transition-colors cursor-pointer"
+              className="text-muted-foreground/60 font-satoshi font-bold text-lg hover:text-foreground transition-colors cursor-pointer"
             >
               {company}
             </div>

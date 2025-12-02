@@ -11,7 +11,7 @@ const Security = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-bg-primary to-[#0F1419] relative overflow-hidden">
+    <section className="py-16 bg-secondary relative overflow-hidden">
       {/* Subtle grid pattern */}
       <div 
         className="absolute inset-0 opacity-[0.02]"
@@ -23,7 +23,7 @@ const Security = () => {
       />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-black text-center text-text-light mb-12 tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-black text-center text-foreground mb-12 tracking-tight">
           Built for security-conscious teams
         </h2>
 
@@ -31,14 +31,14 @@ const Security = () => {
           {features.map((feature, i) => (
             <div
               key={i}
-              className="flex flex-col items-center text-center space-y-3 p-4 rounded-xl hover:bg-bg-card-dark/30 transition-colors"
+              className="flex flex-col items-center text-center space-y-3 p-4 rounded-xl hover:bg-card/50 transition-colors"
             >
               <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
                 <feature.icon className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <p className="text-text-light font-semibold text-sm">{feature.title}</p>
-                <p className="text-text-muted-light text-xs">{feature.subtitle}</p>
+                <p className="text-foreground font-semibold text-sm">{feature.title}</p>
+                <p className="text-muted-foreground text-xs">{feature.subtitle}</p>
               </div>
             </div>
           ))}
