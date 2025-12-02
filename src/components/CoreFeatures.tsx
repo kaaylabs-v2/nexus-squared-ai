@@ -35,9 +35,9 @@ const CoreFeatures = () => {
   ];
 
   return (
-    <section className="py-24 lg:py-32 bg-bg-tertiary">
+    <section className="py-24 lg:py-32 bg-secondary">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-black text-center text-text-primary tracking-tight mb-16">
+        <h2 className="text-4xl md:text-5xl font-black text-center text-foreground tracking-tight mb-16">
           Everything you need for a <br className="hidden sm:block" />
           perfect navigation experience
         </h2>
@@ -51,8 +51,8 @@ const CoreFeatures = () => {
               <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <feature.icon className="w-6 h-6 text-accent" />
               </div>
-              <h3 className="text-xl font-bold text-text-primary mb-3">{feature.title}</h3>
-              <p className="text-text-secondary leading-relaxed">{feature.description}</p>
+              <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>

@@ -6,10 +6,10 @@ const DemoVideo = () => {
     <section className="py-24 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-text-primary tracking-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-6">
             See Nexus² in action
           </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Watch how our AI helps citizens navigate complex government websites to find the forms they need—instantly.
           </p>
         </div>
@@ -46,8 +46,8 @@ const DemoVideo = () => {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 mb-4">
                 <feature.icon className="w-6 h-6 text-accent" />
               </div>
-              <h3 className="font-bold text-text-primary mb-2">{feature.title}</h3>
-              <p className="text-sm text-text-secondary">{feature.description}</p>
+              <h3 className="font-bold text-foreground mb-2">{feature.title}</h3>
+              <p className="text-sm text-muted-foreground">{feature.description}</p>
             </div>
           ))}
         </div>
