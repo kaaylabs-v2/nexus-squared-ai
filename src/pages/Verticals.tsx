@@ -248,12 +248,12 @@ const Verticals = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 lg:py-32 bg-gradient-to-b from-background to-secondary">
+      <section className="py-24 lg:py-32 bg-secondary/50">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-6">
             Ready to transform your industry?
           </h2>
-          <p className="text-xl text-muted-foreground mb-8">
+          <p className="text-xl text-foreground/70 mb-8">
             Join thousands of businesses using Nexus² to help visitors find what they need.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
