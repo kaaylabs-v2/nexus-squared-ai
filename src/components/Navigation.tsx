@@ -23,22 +23,12 @@ const Navigation = () => {
   }, [location.pathname]);
 
   const menuItems = [
-    { label: "What is Nexus²", href: "/#what-is-nexus", isAnchor: true },
+    { label: "What is Nexus²", href: "/what-is-nexus" },
     { label: "Product", href: "/product" },
     { label: "Verticals", href: "/verticals" },
     { label: "Pricing", href: "/pricing" },
     { label: "About", href: "/about" },
   ];
-
-  const handleAnchorClick = (e: React.MouseEvent, href: string) => {
-    const hash = href.split('#')[1];
-    if (location.pathname === '/') {
-      e.preventDefault();
-      const element = document.getElementById(hash);
-      element?.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    }
-  };
 
   return (
     <nav
@@ -64,7 +54,6 @@ const Navigation = () => {
               <Link
                 key={item.label}
                 to={item.href}
-                onClick={item.isAnchor ? (e) => handleAnchorClick(e, item.href) : undefined}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
               >
                 {item.label}
@@ -104,7 +93,6 @@ const Navigation = () => {
                 <Link
                   key={item.label}
                   to={item.href}
-                  onClick={item.isAnchor ? (e) => handleAnchorClick(e, item.href) : undefined}
                   className="block text-muted-foreground hover:text-foreground transition-colors py-2"
                 >
                   {item.label}
