@@ -1,95 +1,74 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-b from-background to-secondary overflow-hidden">
-      {/* Subtle grid pattern overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(to right, hsl(var(--color-accent)) 1px, transparent 1px),
-                           linear-gradient(to bottom, hsl(var(--color-accent)) 1px, transparent 1px)`,
-          backgroundSize: '80px 80px',
-        }}
-      />
-      
-      {/* Radial glow */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+    <section className="relative min-h-screen flex items-center bg-background overflow-hidden pt-20">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+        <div className="text-center max-w-4xl mx-auto space-y-8 animate-fade-up">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal text-foreground leading-[1.1] tracking-tight">
+            Your next breakthrough,{" "}
+            <span className="italic">powered by AI</span>
+          </h1>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-40">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Content */}
-          <div className="space-y-8 animate-fade-up">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium">
-              Enterprise AI Platform
-            </div>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-sans">
+            Nexus² is where powerful AI meets practical navigation solutions — so your visitors can find what they need instantly.
+          </p>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-foreground leading-[1.1] tracking-tight">
-              Help visitors{" "}
-              <span className="text-gradient-accent">navigate your site</span>{" "}
-              instantly
-            </h1>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <Button size="lg" className="font-medium">
+              Request a demo
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+            <Button size="lg" variant="link" className="underline underline-offset-4">
+              Explore products
+            </Button>
+          </div>
+        </div>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
-              Add an intelligent navigation assistant to your website in minutes. Guide visitors to the right pages, answer common questions, and reduce bounce rates.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button
-                size="lg"
-                className="bg-accent text-primary hover:bg-accent/90 font-semibold group text-base px-8"
-              >
-                Book a Live Demo
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-border bg-transparent text-foreground hover:bg-foreground/5 font-medium text-base"
-              >
-                <Play className="mr-2 w-5 h-5" />
-                Watch 2-min Overview
-              </Button>
+        {/* Visual Cards Section */}
+        <div className="mt-16 lg:mt-24 grid lg:grid-cols-2 gap-6 animate-fade-up" style={{ animationDelay: "200ms" }}>
+          {/* Left Card - Product Demo */}
+          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-green-600/80 via-orange-400/80 to-purple-300/80 p-8 min-h-[400px] flex items-end">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            <div className="relative bg-card rounded-2xl p-6 shadow-xl max-w-sm">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center text-accent font-bold">
+                  N
+                </div>
+                <span className="text-foreground font-medium">Navigation Agent</span>
+              </div>
+              <div className="flex gap-2 mb-4">
+                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-secondary text-xs text-muted-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                  READY
+                </span>
+                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-secondary text-xs text-muted-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                  READY
+                </span>
+              </div>
+              <div className="flex items-center gap-2 bg-secondary rounded-xl p-3">
+                <span className="text-muted-foreground text-sm">Find the pricing page...</span>
+                <span className="ml-auto text-muted-foreground">↵</span>
+              </div>
             </div>
           </div>
 
-          {/* Right: Visual */}
-          <div className="relative lg:h-[600px] flex items-center justify-center animate-fade-up" style={{ animationDelay: "200ms" }}>
-            <div className="relative w-full max-w-lg">
-              {/* Central "brain" node */}
-              <div className="relative mx-auto w-48 h-48 rounded-3xl bg-gradient-to-br from-accent/20 to-primary/20 backdrop-blur-xl border border-accent/30 flex items-center justify-center glow-accent animate-glow-pulse">
-                <div className="text-6xl">🧠</div>
-              </div>
-
-              {/* Orbiting data source nodes */}
-              {[
-                { icon: "📊", label: "MySQL", position: "top-0 left-1/2 -translate-x-1/2 -translate-y-12" },
-                { icon: "📁", label: "S3", position: "top-1/4 right-0 translate-x-12" },
-                { icon: "🌐", label: "Website", position: "bottom-1/4 right-0 translate-x-12" },
-                { icon: "📧", label: "Gmail", position: "bottom-0 left-1/2 -translate-x-1/2 translate-y-12" },
-                { icon: "📝", label: "Docs", position: "bottom-1/4 left-0 -translate-x-12" },
-                { icon: "🗂️", label: "Drive", position: "top-1/4 left-0 -translate-x-12" },
-              ].map((node, i) => (
-                <div
-                  key={i}
-                  className={`absolute ${node.position} w-20 h-20 rounded-2xl bg-card/80 backdrop-blur-xl border border-border flex flex-col items-center justify-center gap-1 animate-fade-up hover:scale-110 transition-transform cursor-pointer`}
-                  style={{ animationDelay: `${400 + i * 100}ms` }}
-                >
-                  <span className="text-2xl">{node.icon}</span>
-                  <span className="text-xs text-muted-foreground font-mono">{node.label}</span>
+          {/* Right Card - Testimonial/Image */}
+          <div className="relative rounded-3xl overflow-hidden bg-secondary min-h-[400px]">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center p-8">
+                <div className="w-24 h-24 rounded-full bg-accent/20 mx-auto mb-6 flex items-center justify-center">
+                  <span className="text-4xl">🎯</span>
                 </div>
-              ))}
-
-              {/* Connecting lines (decorative) */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-30" style={{ animationDelay: "800ms" }}>
-                <line x1="50%" y1="50%" x2="50%" y2="10%" stroke="hsl(var(--color-accent))" strokeWidth="2" strokeDasharray="4 4" className="animate-glow-pulse" />
-                <line x1="50%" y1="50%" x2="90%" y2="30%" stroke="hsl(var(--color-accent))" strokeWidth="2" strokeDasharray="4 4" className="animate-glow-pulse" />
-                <line x1="50%" y1="50%" x2="90%" y2="70%" stroke="hsl(var(--color-accent))" strokeWidth="2" strokeDasharray="4 4" className="animate-glow-pulse" />
-                <line x1="50%" y1="50%" x2="50%" y2="90%" stroke="hsl(var(--color-accent))" strokeWidth="2" strokeDasharray="4 4" className="animate-glow-pulse" />
-                <line x1="50%" y1="50%" x2="10%" y2="70%" stroke="hsl(var(--color-accent))" strokeWidth="2" strokeDasharray="4 4" className="animate-glow-pulse" />
-                <line x1="50%" y1="50%" x2="10%" y2="30%" stroke="hsl(var(--color-accent))" strokeWidth="2" strokeDasharray="4 4" className="animate-glow-pulse" />
-              </svg>
+                <p className="text-xl text-foreground font-serif italic max-w-sm">
+                  "Nexus² transformed how our visitors navigate our complex documentation."
+                </p>
+                <p className="text-sm text-muted-foreground mt-4 font-sans">
+                  — Product Team Lead
+                </p>
+              </div>
             </div>
           </div>
         </div>

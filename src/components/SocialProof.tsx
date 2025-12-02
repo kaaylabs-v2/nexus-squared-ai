@@ -1,24 +1,24 @@
 const SocialProof = () => {
   const companies = [
-    "Meridian Analytics",
-    "Northstar Group",
-    "Axiom Systems",
-    "Brightpath",
-    "Quantum Retail",
-    "Stratos",
+    "Oracle",
+    "Dell Technologies",
+    "RBC",
+    "LG CNS",
+    "Fujitsu",
+    "Bell",
   ];
 
   return (
-    <section className="py-12 bg-background">
+    <section className="py-16 bg-background border-t border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <p className="text-center text-muted-foreground text-sm font-medium mb-8 tracking-wide uppercase">
-          Trusted by data-driven teams at
+        <p className="text-center text-muted-foreground text-sm font-medium mb-10 font-sans">
+          Trusted by industry leaders and developers worldwide
         </p>
-        <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
+        <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-16">
           {companies.map((company, i) => (
             <div
               key={i}
-              className="text-muted-foreground/60 font-satoshi font-bold text-lg hover:text-foreground transition-colors cursor-pointer"
+              className="text-muted-foreground/50 font-sans font-semibold text-lg hover:text-foreground transition-colors"
             >
               {company}
             </div>

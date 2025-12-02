@@ -13,23 +13,13 @@ const Integrations = () => {
   ];
 
   return (
-    <section id="integrations" className="py-24 lg:py-32 bg-secondary relative overflow-hidden">
-      {/* Grid pattern overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `linear-gradient(to right, hsl(var(--color-accent)) 1px, transparent 1px),
-                           linear-gradient(to bottom, hsl(var(--color-accent)) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px',
-        }}
-      />
-
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="integrations" className="py-24 lg:py-32 bg-secondary">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-4">
-            Works on any platform
+          <h2 className="text-4xl md:text-5xl font-normal text-foreground tracking-tight mb-4">
+            Works on <span className="italic">any platform</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-lg text-muted-foreground font-sans">
             WordPress, Shopify, Webflow, custom sites—if it has HTML, it works.
           </p>
         </div>
@@ -38,7 +28,7 @@ const Integrations = () => {
           {integrations.map((integration, i) => (
             <div
               key={i}
-              className="bg-card/80 backdrop-blur-xl border border-border rounded-2xl p-6 hover:border-accent/50 hover:bg-card transition-all duration-300 hover-lift group"
+              className="bg-card border border-border rounded-2xl p-6 hover:border-accent/50 transition-all duration-300 group"
             >
               <div className="text-center space-y-3">
                 <div className="text-3xl">
@@ -54,10 +44,10 @@ const Integrations = () => {
                   {integration.name === "Any Website" && "✨"}
                 </div>
                 <div>
-                  <h3 className="font-bold text-foreground mb-1 group-hover:text-accent transition-colors">
+                  <h3 className="font-semibold text-foreground mb-1 group-hover:text-accent transition-colors font-sans">
                     {integration.name}
                   </h3>
-                  <p className="text-xs text-muted-foreground font-mono">{integration.category}</p>
+                  <p className="text-xs text-muted-foreground font-sans">{integration.category}</p>
                 </div>
               </div>
             </div>

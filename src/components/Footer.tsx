@@ -42,13 +42,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-5 gap-12 mb-12">
           {/* Brand column */}
           <div className="md:col-span-1">
-            <Link to="/" className="flex items-center gap-1 group mb-4">
-              <span className="text-2xl font-black text-foreground">Nexus</span>
-              <span className="text-xl font-black text-accent group-hover:scale-110 transition-transform">
-                ²
-              </span>
+            <Link to="/" className="flex items-center gap-1 mb-4">
+              <span className="text-xl font-semibold text-foreground font-sans">Nexus</span>
+              <span className="text-lg font-semibold text-accent">²</span>
             </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed font-sans">
               Your smart website navigation assistant.
             </p>
           </div>
@@ -56,13 +54,13 @@ const Footer = () => {
           {/* Link columns */}
           {footerSections.map((section, i) => (
             <div key={i}>
-              <h3 className="text-foreground font-bold mb-4">{section.title}</h3>
+              <h3 className="text-foreground font-semibold mb-4 font-sans">{section.title}</h3>
               <ul className="space-y-3">
                 {section.links.map((link, j) => (
                   <li key={j}>
                     <Link
                       to={link.to}
-                      className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                      className="text-muted-foreground hover:text-foreground transition-colors text-sm font-sans"
                     >
                       {link.label}
                     </Link>
@@ -75,28 +73,28 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-sm font-sans">
             © 2025 Nexus². All rights reserved.
           </p>
 
           <div className="flex items-center gap-6">
             <a
               href="#"
-              className="text-muted-foreground hover:text-accent transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="text-muted-foreground hover:text-accent transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="GitHub"
             >
               <Github className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="text-muted-foreground hover:text-accent transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Twitter"
             >
               <Twitter className="w-5 h-5" />
