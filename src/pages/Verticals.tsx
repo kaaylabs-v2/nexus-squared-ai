@@ -161,84 +161,84 @@ const Verticals = () => {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="py-24 lg:py-32 bg-gradient-to-b from-background to-secondary">
+      <section className="py-24 lg:py-32 bg-background">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-black text-foreground tracking-tight mb-6">
-            Built for your <span className="text-gradient-accent">industry</span>
+          <h1 className="text-5xl md:text-6xl font-normal text-foreground tracking-tight mb-6">
+            Built for your <span className="italic">industry</span>
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-xl text-muted-foreground leading-relaxed font-sans">
             Real case studies from businesses using Nexus² to transform their website experience
           </p>
         </div>
       </section>
 
       {/* Verticals Grid */}
-      <section className="py-24 bg-secondary/50">
+      <section className="py-24 bg-secondary">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-32">
           {verticals.map((vertical, i) => (
             <div key={i} className="space-y-12">
               {/* Vertical Header */}
               <div className="flex items-center gap-6">
-                <div className={`w-24 h-24 rounded-3xl bg-gradient-to-br ${vertical.gradient} flex items-center justify-center shadow-sm border border-white/10`}>
-                  <vertical.icon className="w-12 h-12 text-white stroke-[1.5]" />
+                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${vertical.gradient} flex items-center justify-center shadow-sm`}>
+                  <vertical.icon className="w-10 h-10 text-white stroke-[1.5]" />
                 </div>
                 <div>
-                  <h2 className="text-4xl font-black text-foreground mb-2">{vertical.name}</h2>
-                  <p className="text-xl text-muted-foreground">{vertical.tagline}</p>
+                  <h2 className="text-3xl font-normal text-foreground mb-1">{vertical.name}</h2>
+                  <p className="text-lg text-muted-foreground font-sans">{vertical.tagline}</p>
                 </div>
               </div>
 
               {/* Challenge & Solution */}
               <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-card p-8 rounded-2xl border border-border">
-                  <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                    <span className="w-8 h-8 rounded-lg bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 text-sm font-black">!</span>
+                <div className="bg-card p-8 rounded-3xl border border-border">
+                  <h3 className="text-base font-semibold text-foreground mb-4 flex items-center gap-2 font-sans">
+                    <span className="w-8 h-8 rounded-lg bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 text-sm font-semibold">!</span>
                     The Challenge
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">{vertical.challenge}</p>
+                  <p className="text-muted-foreground leading-relaxed font-sans">{vertical.challenge}</p>
                 </div>
-                <div className="bg-card p-8 rounded-2xl border border-border">
-                  <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                    <span className="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 text-sm font-black">✓</span>
+                <div className="bg-card p-8 rounded-3xl border border-border">
+                  <h3 className="text-base font-semibold text-foreground mb-4 flex items-center gap-2 font-sans">
+                    <span className="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 text-sm font-semibold">✓</span>
                     How Nexus² Helps
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">{vertical.solution}</p>
+                  <p className="text-muted-foreground leading-relaxed font-sans">{vertical.solution}</p>
                 </div>
               </div>
 
               {/* Results */}
               <div className="grid grid-cols-3 gap-6">
                 {vertical.results.map((result, j) => (
-                  <div key={j} className="bg-card p-6 rounded-2xl border border-border text-center hover-lift">
-                    <div className={`text-4xl font-black mb-2 bg-gradient-to-r ${vertical.gradient} bg-clip-text text-transparent`}>
+                  <div key={j} className="bg-card p-6 rounded-2xl border border-border text-center">
+                    <div className={`text-3xl font-semibold mb-2 bg-gradient-to-r ${vertical.gradient} bg-clip-text text-transparent font-sans`}>
                       {result.metric}
                     </div>
-                    <div className="text-sm text-muted-foreground font-medium">{result.label}</div>
+                    <div className="text-sm text-muted-foreground font-sans">{result.label}</div>
                   </div>
                 ))}
               </div>
 
               {/* Case Study */}
-              <div className="bg-gradient-to-br from-accent/5 to-cyan-400/5 p-8 lg:p-12 rounded-2xl border border-accent/20">
+              <div className="bg-card p-8 lg:p-12 rounded-3xl border border-accent/20">
                 <div className="flex items-start gap-3 mb-6">
-                  <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-bold border border-accent/20">
+                  <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium border border-accent/20 font-sans">
                     Case Study
                   </span>
                 </div>
-                <h3 className="text-2xl font-black text-foreground mb-6">{vertical.caseStudy.company}</h3>
+                <h3 className="text-2xl font-normal text-foreground mb-6">{vertical.caseStudy.company}</h3>
                 
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-bold text-foreground mb-2">The Problem:</h4>
-                    <p className="text-muted-foreground leading-relaxed">{vertical.caseStudy.problem}</p>
+                    <h4 className="font-semibold text-foreground mb-2 font-sans">The Problem:</h4>
+                    <p className="text-muted-foreground leading-relaxed font-sans">{vertical.caseStudy.problem}</p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-foreground mb-2">The Implementation:</h4>
-                    <p className="text-muted-foreground leading-relaxed">{vertical.caseStudy.implementation}</p>
+                    <h4 className="font-semibold text-foreground mb-2 font-sans">The Implementation:</h4>
+                    <p className="text-muted-foreground leading-relaxed font-sans">{vertical.caseStudy.implementation}</p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-foreground mb-2">The Outcome:</h4>
-                    <p className="text-muted-foreground leading-relaxed">{vertical.caseStudy.outcome}</p>
+                    <h4 className="font-semibold text-foreground mb-2 font-sans">The Outcome:</h4>
+                    <p className="text-muted-foreground leading-relaxed font-sans">{vertical.caseStudy.outcome}</p>
                   </div>
                 </div>
               </div>
@@ -248,21 +248,21 @@ const Verticals = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 lg:py-32 bg-secondary/50">
+      <section className="py-24 lg:py-32 bg-background">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-6">
-            Ready to transform your industry?
+          <h2 className="text-4xl md:text-5xl font-normal text-foreground tracking-tight mb-6">
+            Ready to transform your <span className="italic">industry?</span>
           </h2>
-          <p className="text-xl text-foreground/70 mb-8">
+          <p className="text-lg text-muted-foreground mb-8 font-sans">
             Join thousands of businesses using Nexus² to help visitors find what they need.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-accent text-primary hover:bg-accent/90 font-bold group">
+            <Button size="lg" className="font-medium">
               Start Free Trial
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
             <Link to="/pricing">
-              <Button size="lg" variant="outline" className="border-border text-foreground hover:bg-secondary">
+              <Button size="lg" variant="outline" className="font-medium">
                 View Pricing
               </Button>
             </Link>

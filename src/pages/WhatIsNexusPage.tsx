@@ -148,15 +148,15 @@ const WhatIsNexusPage = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Hero intro */}
           <div className="text-center max-w-4xl mx-auto mb-20">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground tracking-tight mb-8">
-              What is <span className="text-gradient-accent">Nexus²</span>?
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-foreground tracking-tight mb-8">
+              What is <span className="italic">Nexus²</span>?
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 font-sans">
               Today's websites are packed with information. Users don't want to click through menus or search bars — they want answers instantly.
             </p>
             
-            <p className="text-lg text-foreground font-medium mb-10">
+            <p className="text-lg text-foreground font-medium mb-10 font-sans">
               Nexus² turns your website into a conversational experience where customers simply ask:
             </p>
 
@@ -165,38 +165,38 @@ const WhatIsNexusPage = () => {
               {exampleQueries.map((query, i) => (
                 <div 
                   key={i}
-                  className="bg-card border border-border rounded-xl p-4 text-left"
+                  className="bg-card border border-border rounded-2xl p-4 text-left"
                 >
-                  <span className="text-muted-foreground text-sm italic">"{query}"</span>
+                  <span className="text-muted-foreground text-sm italic font-sans">"{query}"</span>
                 </div>
               ))}
             </div>
 
-            <p className="text-lg text-foreground font-semibold">
+            <p className="text-lg text-foreground font-medium font-sans">
               …and Nexus² does it. It doesn't just respond — it <span className="text-accent">navigates</span>, <span className="text-accent">highlights</span>, <span className="text-accent">deep links</span>, and <span className="text-accent">retrieves structured results</span>.
             </p>
           </div>
 
           {/* Core Capabilities */}
           <div className="mb-24">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-12">
-              🧠 What Nexus² Does
+            <h2 className="text-2xl md:text-3xl font-normal text-foreground text-center mb-12">
+              What Nexus² <span className="italic">Does</span>
             </h2>
             
             <div className="grid md:grid-cols-2 gap-6">
               {coreCapabilities.map((capability, i) => (
                 <div
                   key={i}
-                  className="bg-card p-8 rounded-2xl border border-border hover:border-accent/30 transition-all group"
+                  className="bg-card p-8 rounded-3xl border border-border hover:border-accent/30 transition-all group"
                 >
                   <div className="flex items-start gap-5">
-                    <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                       <capability.icon className="w-7 h-7 text-accent" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-foreground mb-1">{capability.title}</h3>
-                      <p className="text-sm text-accent font-medium mb-3">{capability.subtitle}</p>
-                      <p className="text-muted-foreground leading-relaxed">{capability.description}</p>
+                      <h3 className="text-lg font-semibold text-foreground mb-1 font-sans">{capability.title}</h3>
+                      <p className="text-sm text-accent font-medium mb-3 font-sans">{capability.subtitle}</p>
+                      <p className="text-muted-foreground leading-relaxed font-sans">{capability.description}</p>
                     </div>
                   </div>
                 </div>
@@ -206,42 +206,42 @@ const WhatIsNexusPage = () => {
 
           {/* Works for Every Department */}
           <div className="mb-24">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-12">
-              Works for Every Department
+            <h2 className="text-2xl md:text-3xl font-normal text-foreground text-center mb-12">
+              Works for <span className="italic">Every Department</span>
             </h2>
             
             <div className="grid md:grid-cols-2 gap-8">
               {/* For Customers */}
-              <div className="bg-card p-8 rounded-2xl border border-border">
+              <div className="bg-card p-8 rounded-3xl border border-border">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
                     <Users className="w-5 h-5 text-accent" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground">For Customers</h3>
+                  <h3 className="text-lg font-semibold text-foreground font-sans">For Customers</h3>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   {customerUseCases.map((useCase, i) => (
                     <div key={i} className="flex items-center gap-3 text-muted-foreground">
                       <useCase.icon className="w-4 h-4 text-accent/70" />
-                      <span className="text-sm">{useCase.text}</span>
+                      <span className="text-sm font-sans">{useCase.text}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* For Internal Teams */}
-              <div className="bg-card p-8 rounded-2xl border border-border">
+              <div className="bg-card p-8 rounded-3xl border border-border">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
                     <BarChart3 className="w-5 h-5 text-accent" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground">For Internal Teams</h3>
+                  <h3 className="text-lg font-semibold text-foreground font-sans">For Internal Teams</h3>
                 </div>
                 <div className="space-y-3">
                   {internalUseCases.map((useCase, i) => (
                     <div key={i} className="flex items-center gap-3 text-muted-foreground">
                       <useCase.icon className="w-4 h-4 text-accent/70" />
-                      <span className="text-sm">{useCase.text}</span>
+                      <span className="text-sm font-sans">{useCase.text}</span>
                     </div>
                   ))}
                 </div>
@@ -251,10 +251,10 @@ const WhatIsNexusPage = () => {
 
           {/* Industry Use Cases */}
           <div className="mb-24">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
-              Built for Every Industry
+            <h2 className="text-2xl md:text-3xl font-normal text-foreground text-center mb-4">
+              Built for <span className="italic">Every Industry</span>
             </h2>
-            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12 font-sans">
               See how Nexus² transforms user experiences across different verticals
             </p>
             
@@ -262,19 +262,19 @@ const WhatIsNexusPage = () => {
               {industryUseCases.map((industry, i) => (
                 <div
                   key={i}
-                  className="bg-card p-6 rounded-2xl border border-border hover:border-accent/30 transition-all"
+                  className="bg-card p-6 rounded-3xl border border-border hover:border-accent/30 transition-all"
                 >
                   <div className="flex items-center gap-3 mb-5">
-                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${industry.color.split(' ')[0]}`}>
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${industry.color.split(' ')[0]}`}>
                       <industry.icon className={`w-5 h-5 ${industry.color.split(' ')[1]}`} />
                     </div>
-                    <h3 className="text-lg font-bold text-foreground">{industry.title}</h3>
+                    <h3 className="text-lg font-semibold text-foreground font-sans">{industry.title}</h3>
                   </div>
                   <div className="space-y-2">
                     {industry.examples.map((example, j) => (
                       <div 
                         key={j}
-                        className="bg-secondary/50 rounded-lg px-3 py-2 text-sm text-muted-foreground italic"
+                        className="bg-secondary rounded-xl px-3 py-2 text-sm text-muted-foreground italic font-sans"
                       >
                         "{example}"
                       </div>
@@ -288,38 +288,38 @@ const WhatIsNexusPage = () => {
           {/* Customization & Enterprise */}
           <div className="grid md:grid-cols-2 gap-8">
             {/* Customization */}
-            <div className="bg-card p-8 rounded-2xl border border-border">
+            <div className="bg-card p-8 rounded-3xl border border-border">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
                   <Palette className="w-5 h-5 text-accent" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground">🎨 Fully Customizable</h3>
+                <h3 className="text-lg font-semibold text-foreground font-sans">Fully Customizable</h3>
               </div>
-              <p className="text-muted-foreground mb-6">Every company gets its own tenant with:</p>
+              <p className="text-muted-foreground mb-6 font-sans">Every company gets its own tenant with:</p>
               <div className="space-y-3">
                 {customizationFeatures.map((feature, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <CheckCircle className="w-4 h-4 text-accent" />
-                    <span className="text-foreground text-sm">{feature}</span>
+                    <span className="text-foreground text-sm font-sans">{feature}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Enterprise Ready */}
-            <div className="bg-card p-8 rounded-2xl border border-border">
+            <div className="bg-card p-8 rounded-3xl border border-border">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
                   <Shield className="w-5 h-5 text-accent" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground">🔐 Enterprise-Ready</h3>
+                <h3 className="text-lg font-semibold text-foreground font-sans">Enterprise-Ready</h3>
               </div>
-              <p className="text-muted-foreground mb-6">Built for security and scale:</p>
+              <p className="text-muted-foreground mb-6 font-sans">Built for security and scale:</p>
               <div className="space-y-3">
                 {enterpriseFeatures.map((feature, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <Lock className="w-4 h-4 text-accent" />
-                    <span className="text-foreground text-sm">{feature}</span>
+                    <span className="text-foreground text-sm font-sans">{feature}</span>
                   </div>
                 ))}
               </div>

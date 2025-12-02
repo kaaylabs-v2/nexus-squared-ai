@@ -3,41 +3,26 @@ import { ArrowRight } from "lucide-react";
 
 const FinalCTA = () => {
   return (
-    <section className="py-32 lg:py-40 bg-secondary relative overflow-hidden">
-      {/* Radial glow */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl" />
-      </div>
-
-      <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center space-y-8">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground tracking-tight">
-          Ready to help your visitors <br className="hidden sm:block" />
-          <span className="text-gradient-accent">find what they need?</span>
+    <section className="py-24 lg:py-32 bg-background">
+      <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-foreground tracking-tight mb-6">
+          Ready to transform your{" "}
+          <span className="italic">website experience?</span>
         </h2>
-
-        <p className="text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed">
-          Start your free trial today. Add the widget to your site in under 5 minutes.
+        
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 font-sans">
+          Join thousands of teams using Nexus² to help visitors navigate their websites with AI-powered assistance.
         </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-          <Button
-            size="lg"
-            className="bg-accent text-primary hover:bg-accent/90 font-bold text-lg px-10 glow-accent group"
-          >
-            Start Free Trial
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button size="lg" className="font-medium">
+            Request a demo
+            <ArrowRight className="ml-2 w-4 h-4" />
+          </Button>
+          <Button size="lg" variant="outline" className="font-medium">
+            Contact sales
           </Button>
         </div>
-
-        <p className="text-muted-foreground text-sm pt-4">
-          or contact{" "}
-          <a
-            href="mailto:sales@nexussquared.ai"
-            className="text-accent hover:underline font-medium"
-          >
-            sales@nexussquared.ai
-          </a>
-        </p>
       </div>
     </section>
   );

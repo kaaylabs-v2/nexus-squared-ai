@@ -2,38 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Cohere-inspired Design System. All colors MUST be HSL. */
 
 @layer base {
   :root {
-    /* Nexus² Premium Design System - Light Mode */
+    /* Cohere-inspired Light Mode */
     
     /* Base Backgrounds */
-    --bg-primary: 220 9% 98%;           /* Light mode: off-white */
-    --bg-secondary: 220 9% 98%;         /* #FAFBFC - Warm off-white */
-    --bg-tertiary: 220 9% 97%;          /* #F4F5F7 - Subtle gray */
-    --bg-card: 0 0% 100%;               /* #FFFFFF - Pure white */
-    --bg-card-dark: 220 9% 95%;         /* Light mode: light gray */
+    --bg-primary: 40 20% 99%;             /* Warm off-white */
+    --bg-secondary: 40 15% 97%;           /* Subtle cream */
+    --bg-tertiary: 40 10% 95%;            /* Light gray-cream */
+    --bg-card: 0 0% 100%;                 /* Pure white */
+    --bg-card-dark: 40 10% 96%;           /* Light cards */
     
-    /* Brand Colors */
-    --color-primary: 211 54% 24%;       /* #1E3A5F - Deep navy */
-    --color-accent: 169 100% 45%;       /* #00E5C7 - Electric cyan */
-    --color-accent-glow: 169 100% 45%;  /* For glow effects */
+    /* Brand Colors - Cohere Coral */
+    --color-primary: 220 9% 12%;          /* Near black for text/buttons */
+    --color-accent: 14 90% 62%;           /* Coral/salmon #F27052 */
+    --color-accent-glow: 14 90% 62%;      /* For glow effects */
     
     /* Text Colors */
-    --text-primary: 222 47% 11%;        /* #0F172A - Near-black */
-    --text-secondary: 215 16% 47%;      /* #64748B - Muted gray */
-    --text-light: 222 47% 11%;          /* Light mode: dark text */
-    --text-muted-light: 215 16% 47%;    /* Light mode: muted */
+    --text-primary: 220 9% 12%;           /* Near black */
+    --text-secondary: 220 9% 45%;         /* Medium gray */
+    --text-light: 220 9% 12%;             /* Dark text */
+    --text-muted-light: 220 9% 55%;       /* Muted */
     
     /* Borders */
-    --color-border: 214 32% 91%;        /* #E2E8F0 - Subtle borders */
-    --color-border-dark: 214 32% 85%;   /* Light mode: visible borders */
+    --color-border: 220 9% 90%;           /* Light borders */
+    --color-border-dark: 220 9% 85%;      /* Slightly darker */
     
     /* Semantic Mappings */
-    --background: var(--bg-secondary);
+    --background: var(--bg-primary);
     --foreground: var(--text-primary);
     
     --card: var(--bg-card);
@@ -43,7 +41,7 @@ All colors MUST be HSL.
     --popover-foreground: var(--text-primary);
     
     --primary: var(--color-primary);
-    --primary-foreground: 210 40% 98%;
+    --primary-foreground: 0 0% 100%;
     
     --secondary: var(--bg-tertiary);
     --secondary-foreground: var(--text-primary);
@@ -52,47 +50,47 @@ All colors MUST be HSL.
     --muted-foreground: var(--text-secondary);
     
     --accent: var(--color-accent);
-    --accent-foreground: var(--color-primary);
+    --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
     
     --border: var(--color-border);
     --input: var(--color-border);
     --ring: var(--color-accent);
     
-    --radius: 1rem;
+    --radius: 0.75rem;
     
     /* Custom Properties */
-    --hero-gradient-start: 220 9% 95%;
-    --hero-gradient-end: 220 14% 90%;
+    --hero-gradient-start: 40 20% 99%;
+    --hero-gradient-end: 40 15% 97%;
     --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .dark {
-    /* Nexus² Premium Design System - Dark Mode */
+    /* Cohere-inspired Dark Mode */
     
     /* Base Backgrounds */
-    --bg-primary: 240 6% 6%;            /* #0A0A0F - Deep space black */
-    --bg-secondary: 240 6% 6%;          /* Dark mode: space black */
-    --bg-tertiary: 240 10% 10%;         /* Slightly lighter */
-    --bg-card: 240 10% 8%;              /* Dark cards */
-    --bg-card-dark: 240 10% 8%;         /* #12121A - Dark mode cards */
+    --bg-primary: 220 9% 8%;              /* Deep dark */
+    --bg-secondary: 220 9% 8%;            /* Dark */
+    --bg-tertiary: 220 9% 12%;            /* Slightly lighter */
+    --bg-card: 220 9% 10%;                /* Dark cards */
+    --bg-card-dark: 220 9% 10%;           /* Dark mode cards */
     
     /* Brand Colors */
-    --color-primary: 211 54% 24%;       /* #1E3A5F - Deep navy */
-    --color-accent: 169 100% 45%;       /* #00E5C7 - Electric cyan */
-    --color-accent-glow: 169 100% 45%;  /* For glow effects */
+    --color-primary: 0 0% 100%;           /* White for dark mode */
+    --color-accent: 14 90% 62%;           /* Coral stays the same */
+    --color-accent-glow: 14 90% 62%;      /* For glow effects */
     
     /* Text Colors */
-    --text-primary: 210 40% 98%;        /* #F8FAFC - Light text */
-    --text-secondary: 214 32% 65%;      /* #94A3B8 - Muted */
-    --text-light: 210 40% 98%;          /* #F8FAFC - Light text */
-    --text-muted-light: 214 32% 65%;    /* #94A3B8 - Muted on dark */
+    --text-primary: 0 0% 98%;             /* Near white */
+    --text-secondary: 220 9% 65%;         /* Muted gray */
+    --text-light: 0 0% 98%;               /* Light text */
+    --text-muted-light: 220 9% 60%;       /* Muted on dark */
     
     /* Borders */
-    --color-border: 217 33% 17%;        /* Dark borders */
-    --color-border-dark: 217 33% 17%;   /* #1E293B - Dark borders */
+    --color-border: 220 9% 20%;           /* Dark borders */
+    --color-border-dark: 220 9% 20%;      /* Dark borders */
     
     /* Semantic Mappings */
     --background: var(--bg-secondary);
@@ -105,7 +103,7 @@ All colors MUST be HSL.
     --popover-foreground: var(--text-primary);
     
     --primary: var(--color-primary);
-    --primary-foreground: 210 40% 98%;
+    --primary-foreground: 220 9% 12%;
     
     --secondary: var(--bg-tertiary);
     --secondary-foreground: var(--text-primary);
@@ -114,18 +112,18 @@ All colors MUST be HSL.
     --muted-foreground: var(--text-secondary);
     
     --accent: var(--color-accent);
-    --accent-foreground: var(--color-primary);
+    --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
     
     --border: var(--color-border);
     --input: var(--color-border);
     --ring: var(--color-accent);
     
     /* Custom Properties */
-    --hero-gradient-start: 240 6% 6%;
-    --hero-gradient-end: 222 18% 8%;
+    --hero-gradient-start: 220 9% 8%;
+    --hero-gradient-end: 220 9% 10%;
   }
 }
 
@@ -135,11 +133,11 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-satoshi antialiased;
+    @apply bg-background text-foreground font-sans antialiased;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-satoshi tracking-tight;
+    @apply font-serif tracking-tight;
   }
   
   code, pre {
@@ -149,11 +147,11 @@ All colors MUST be HSL.
 
 @layer utilities {
   .text-gradient-accent {
-    @apply bg-gradient-to-r from-accent to-cyan-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent to-orange-400 bg-clip-text text-transparent;
   }
   
   .glow-accent {
-    box-shadow: 0 0 40px hsla(var(--color-accent-glow) / 0.15);
+    box-shadow: 0 0 40px hsla(var(--color-accent-glow) / 0.2);
   }
   
   .hover-lift {
@@ -163,6 +161,6 @@ All colors MUST be HSL.
   
   .hover-lift:hover {
     @apply -translate-y-1;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   }
 }
