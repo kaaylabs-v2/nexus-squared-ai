@@ -7,12 +7,11 @@ const Hero = () => {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
         <div className="text-center max-w-4xl mx-auto space-y-8 animate-fade-up">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal text-foreground leading-[1.1] tracking-tight">
-            Your next breakthrough,{" "}
-            <span className="italic">powered by AI</span>
+            <span className="text-accent">AI-powered platform</span> that transforms website experiences
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-sans">
-            Nexus² is where powerful AI meets practical navigation solutions — so your visitors can find what they need instantly.
+            Nexus² is an intelligent AI platform that makes websites more accessible and user-friendly. From voice interactions to smart navigation, we help every user find what they need.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
