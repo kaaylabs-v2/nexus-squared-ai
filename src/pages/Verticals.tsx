@@ -7,7 +7,6 @@ const Verticals = () => {
     {
       icon: ShoppingBag,
       name: "E-commerce",
-      gradient: "from-purple-500 to-pink-500",
       tagline: "Turn browsers into buyers",
       challenge: "45% of visitors leave e-commerce sites because they can't find what they're looking for. Complex product catalogs overwhelm shoppers.",
       solution: "Nexus² guides customers to the right products instantly. Ask 'Show me wireless headphones under $100' and get relevant results immediately.",
@@ -30,7 +29,6 @@ const Verticals = () => {
     {
       icon: Monitor,
       name: "SaaS",
-      gradient: "from-blue-500 to-cyan-500",
       tagline: "Get users to 'aha' faster",
       challenge: "SaaS sites have complex features, multiple pricing tiers, and technical documentation that confuses prospects.",
       solution: "Nexus² answers 'How does your API work?' or 'What's included in Pro?' instantly, routing users to docs, pricing, or demo signup.",
@@ -53,7 +51,6 @@ const Verticals = () => {
     {
       icon: Heart,
       name: "Healthcare",
-      gradient: "from-green-500 to-emerald-500",
       tagline: "Help patients find care, fast",
       challenge: "Medical websites are hard to navigate. Patients can't find providers, services, or appointment booking.",
       solution: "Nexus² helps patients find 'pediatricians near me taking new patients' or 'urgent care hours' without clicking through 8 pages.",
@@ -76,7 +73,6 @@ const Verticals = () => {
     {
       icon: DollarSign,
       name: "Finance",
-      gradient: "from-yellow-500 to-orange-500",
       tagline: "Build trust through clarity",
       challenge: "Financial services sites are dense with jargon. Visitors leave confused about rates, terms, and eligibility.",
       solution: "Nexus² explains 'What's your mortgage rate for 20% down?' or 'Am I eligible for this card?' in plain language.",
@@ -99,7 +95,6 @@ const Verticals = () => {
     {
       icon: GraduationCap,
       name: "Education",
-      gradient: "from-indigo-500 to-purple-500",
       tagline: "Guide students to enrollment",
       challenge: "Education sites have programs, admissions, financial aid, and campus info buried in menus. Prospective students give up.",
       solution: "Nexus² answers 'What scholarships are available?' or 'How do I apply?' and guides to the right forms and deadlines.",
@@ -122,7 +117,6 @@ const Verticals = () => {
     {
       icon: Home,
       name: "Real Estate",
-      gradient: "from-red-500 to-pink-500",
       tagline: "Connect buyers with properties",
       challenge: "Real estate sites have hundreds of listings. Buyers can't filter by their specific needs and give up.",
       solution: "Nexus² handles 'Show me 3-bedroom homes under $500k near good schools' and surfaces relevant properties instantly.",
@@ -145,7 +139,6 @@ const Verticals = () => {
     {
       icon: Plane,
       name: "Travel",
-      gradient: "from-cyan-500 to-blue-500",
       tagline: "Turn lookers into bookers",
       challenge: "Travel sites have packages, destinations, dates, and policies. Visitors get overwhelmed and book elsewhere.",
       solution: "Nexus² answers 'What's included in the Hawaii package?' or 'What's your cancellation policy?' before users bounce.",
@@ -168,7 +161,6 @@ const Verticals = () => {
     {
       icon: Scale,
       name: "Legal",
-      gradient: "from-slate-500 to-gray-600",
       tagline: "Make legal services accessible",
       challenge: "Law firm sites are intimidating. Potential clients don't know if they have the right type of lawyer or how to start.",
       solution: "Nexus² guides with 'I need help with a contract dispute' and connects them to the right attorney and consultation booking.",
@@ -211,8 +203,8 @@ const Verticals = () => {
             <div key={i} className="space-y-12">
               {/* Vertical Header */}
               <div className="flex items-center gap-6">
-                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${vertical.gradient} flex items-center justify-center shadow-sm`}>
-                  <vertical.icon className="w-10 h-10 text-white stroke-[1.5]" />
+                <div className="w-16 h-16 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+                  <vertical.icon className="w-8 h-8 text-accent stroke-[1.5]" />
                 </div>
                 <div>
                   <h2 className="text-3xl font-normal text-foreground mb-1">{vertical.name}</h2>
@@ -242,7 +234,7 @@ const Verticals = () => {
               <div className="grid grid-cols-3 gap-6">
                 {vertical.results.map((result, j) => (
                   <div key={j} className="bg-card p-6 rounded-2xl border border-border text-center">
-                    <div className={`text-3xl font-semibold mb-2 bg-gradient-to-r ${vertical.gradient} bg-clip-text text-transparent font-sans`}>
+                    <div className="text-3xl font-semibold mb-2 text-accent font-sans">
                       {result.metric}
                     </div>
                     <div className="text-sm text-muted-foreground font-sans">{result.label}</div>
