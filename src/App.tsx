@@ -12,6 +12,7 @@ import Product from "./pages/Product";
 import Verticals from "./pages/Verticals";
 import PricingPage from "./pages/PricingPage";
 import About from "./pages/About";
+import WhatIsNexusPage from "./pages/WhatIsNexusPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/what-is-nexus" element={<WhatIsNexusPage />} />
               <Route path="/product" element={<Product />} />
               <Route path="/verticals" element={<Verticals />} />
               <Route path="/pricing" element={<PricingPage />} />
