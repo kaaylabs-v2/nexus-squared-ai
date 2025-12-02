@@ -18,8 +18,7 @@ echo $TASK_REVISION
 DESIRED_COUNT=`aws ecs describe-services --cluster ${CLUSTER} --services ${SERVICE_NAME}  --region us-east-1 --profile new-kaaylabs | egrep "desiredCount" | tr "/" " " | awk '{print $2}' | sed 's/,$//'`
 echo $DESIRED_COUNT
 OLD_TASK_ID=$(aws ecs list-tasks --cluster ${CLUSTER} --desired-status RUNNING --service ${SERVICE_NAME} --region us-east-1 --profile new-kaaylabs | egrep "task/" | sed -E "s/.*task\/(.*)\"/\1/")
-echo $OLD_TASK_ID
-aws ecs stop-task --cluster ${CLUSTER} --task ${OLD_TASK_ID} --region us-east-1 --profile new-kaaylabs
+
 aws ecs update-service --cluster ${CLUSTER} --service ${SERVICE_NAME} --desired-count 1 --task-definition ${TASK_FAMILY} --force-new-deployment --region us-east-1 --profile new-kaaylabs
 
 # Jenkins Job wait until service is avaliable in cluster
