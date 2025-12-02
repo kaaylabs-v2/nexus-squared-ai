@@ -20,7 +20,11 @@ const Verticals = () => {
         company: "Leading Home Furnishings Retailer",
         problem: "7,000+ products, 65% bounce rate, customers couldn't navigate categories.",
         implementation: "Added Nexus² widget trained on product catalog, dimensions, materials, and styles.",
-        outcome: "Bounce rate dropped to 38%. Average order value increased 42%. Support tickets about 'where to find' items down 71%."
+        sampleQuestions: [
+          "Show me leather sofas under $2,000",
+          "What dining tables fit a 10x12 room?",
+          "Do you have mid-century modern nightstands in walnut?"
+        ]
       }
     },
     {
@@ -39,7 +43,11 @@ const Verticals = () => {
         company: "B2B Analytics Platform",
         problem: "Users confused by 12+ features, unclear pricing, 80% never reached signup.",
         implementation: "Deployed Nexus² with feature comparisons, pricing calculator, and API docs integrated.",
-        outcome: "Trial signups increased 4.1x. Sales calls reduced by half as questions answered upfront. Expansion revenue up 28%."
+        sampleQuestions: [
+          "What's the difference between Pro and Enterprise?",
+          "How do I connect your API to Salesforce?",
+          "Can I export data to CSV?"
+        ]
       }
     },
     {
@@ -58,7 +66,11 @@ const Verticals = () => {
         company: "Regional Medical Group",
         problem: "12 locations, 140+ providers, phone lines overwhelmed with 'where do I go' questions.",
         implementation: "Nexus² integrated with provider directory, insurance verification, and online scheduling.",
-        outcome: "Phone volume dropped 68%. Online bookings increased 487%. Staff saved 35 hours/week on basic inquiries."
+        sampleQuestions: [
+          "Which location has the shortest wait time for urgent care?",
+          "Do you have any pediatricians accepting new patients?",
+          "What insurance plans do you accept?"
+        ]
       }
     },
     {
@@ -77,7 +89,11 @@ const Verticals = () => {
         company: "Mid-Size Credit Union",
         problem: "Complex loan products, compliance restrictions, 5% application completion rate.",
         implementation: "Nexus² widget with pre-approved messaging, rate calculators, and eligibility guidance.",
-        outcome: "Applications up 281%. Completion rate jumped to 23%. Zero compliance issues. Members rate experience 4.7/5."
+        sampleQuestions: [
+          "What's the current mortgage rate for a 30-year fixed?",
+          "Am I eligible for a personal loan with a 680 credit score?",
+          "How do I set up automatic payments?"
+        ]
       }
     },
     {
@@ -96,7 +112,11 @@ const Verticals = () => {
         company: "State Community College",
         problem: "8,000 pages of content, prospective students couldn't find application requirements or deadlines.",
         implementation: "Nexus² trained on programs, admission criteria, financial aid, and campus resources.",
-        outcome: "Applications increased 67%. Admissions staff inquiries down 54%. Tour bookings up 312%. Students find answers in under 30 seconds."
+        sampleQuestions: [
+          "What are the prerequisites for the nursing program?",
+          "When is the deadline for fall semester applications?",
+          "How do I apply for financial aid?"
+        ]
       }
     },
     {
@@ -115,7 +135,11 @@ const Verticals = () => {
         company: "Regional Real Estate Brokerage",
         problem: "450+ active listings, buyers overwhelmed by search filters, 12% inquiry rate.",
         implementation: "Nexus² connected to MLS data, neighborhood info, school ratings, and agent calendars.",
-        outcome: "Inquiries jumped to 61%. Showing requests up 8x. Agents close deals 43% faster. Average commission increased 18%."
+        sampleQuestions: [
+          "Show me 3-bedroom homes under $500k near good schools",
+          "What's the average price per square foot in downtown?",
+          "Are there any open houses this weekend?"
+        ]
       }
     },
     {
@@ -134,7 +158,11 @@ const Verticals = () => {
         company: "Boutique Travel Agency",
         problem: "200+ tour packages, complex pricing, 89% cart abandonment, users confused about what's included.",
         implementation: "Nexus² widget with package details, availability calendar, payment plans, and booking assistance.",
-        outcome: "Cart abandonment dropped to 21%. Bookings increased 4.6x. Upsells (insurance, upgrades) up 156%. Revenue +$2.1M annually."
+        sampleQuestions: [
+          "What's included in the 7-day Hawaii package?",
+          "Can I pay in installments?",
+          "What's your cancellation policy for international trips?"
+        ]
       }
     },
     {
@@ -153,7 +181,11 @@ const Verticals = () => {
         company: "Multi-Practice Law Firm",
         problem: "8 practice areas, visitors couldn't identify right attorney, 4% consultation conversion rate.",
         implementation: "Nexus² with practice area guidance, attorney bios, case types, and online scheduling.",
-        outcome: "Consultations up 6.2x. Intake calls down 60% (widget pre-qualifies). Client retention +71%. Partner revenue increased $400k/year."
+        sampleQuestions: [
+          "I need help with a contract dispute—who should I talk to?",
+          "Do you offer free consultations for personal injury cases?",
+          "What documents do I need to bring for an estate planning meeting?"
+        ]
       }
     }
   ];
@@ -237,8 +269,15 @@ const Verticals = () => {
                     <p className="text-muted-foreground leading-relaxed font-sans">{vertical.caseStudy.implementation}</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2 font-sans">The Outcome:</h4>
-                    <p className="text-muted-foreground leading-relaxed font-sans">{vertical.caseStudy.outcome}</p>
+                    <h4 className="font-semibold text-foreground mb-2 font-sans">Sample Questions:</h4>
+                    <ul className="space-y-2">
+                      {vertical.caseStudy.sampleQuestions.map((question, idx) => (
+                        <li key={idx} className="text-muted-foreground leading-relaxed font-sans flex items-start gap-2">
+                          <span className="text-accent mt-1">→</span>
+                          <span>"{question}"</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </div>
