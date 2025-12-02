@@ -52,13 +52,13 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="py-24 lg:py-32 bg-bg-secondary">
+    <section id="pricing" className="py-24 lg:py-32 bg-secondary/50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-text-primary tracking-tight mb-4">
+          <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-4">
             Pricing that scales with you
           </h2>
-          <p className="text-xl text-text-secondary">Start free. Upgrade when ready.</p>
+          <p className="text-xl text-muted-foreground">Start free. Upgrade when ready.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -80,10 +80,10 @@ const Pricing = () => {
               )}
 
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-text-primary mb-4">{tier.name}</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-4">{tier.name}</h3>
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-5xl font-black text-text-primary">{tier.price}</span>
-                  <span className="text-text-secondary text-lg">{tier.period}</span>
+                  <span className="text-5xl font-black text-foreground">{tier.price}</span>
+                  <span className="text-muted-foreground text-lg">{tier.period}</span>
                 </div>
               </div>
 
@@ -91,7 +91,7 @@ const Pricing = () => {
                 {tier.features.map((feature, j) => (
                   <li key={j} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                    <span className="text-text-secondary">{feature}</span>
+                    <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -101,7 +101,7 @@ const Pricing = () => {
                 className={`w-full ${
                   tier.popular
                     ? "bg-accent text-primary hover:bg-accent/90 font-semibold"
-                    : "border-border text-text-primary hover:bg-bg-tertiary"
+                    : "border-border text-foreground hover:bg-secondary"
                 }`}
               >
                 {tier.cta}

@@ -4,12 +4,12 @@ import { Check, X } from "lucide-react";
 const PricingPage = () => {
   return (
     <div className="pt-20">
-      <div className="py-24 lg:py-32 bg-gradient-to-b from-bg-primary to-[#0F1419]">
+      <div className="py-24 lg:py-32 bg-gradient-to-b from-background to-secondary">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-black text-text-light tracking-tight mb-6">
+          <h1 className="text-5xl md:text-6xl font-black text-foreground tracking-tight mb-6">
             Simple, transparent <span className="text-gradient-accent">pricing</span>
           </h1>
-          <p className="text-xl text-text-muted-light leading-relaxed">
+          <p className="text-xl text-muted-foreground leading-relaxed">
             Start free, scale as you grow. No hidden fees, no surprises.
           </p>
         </div>
@@ -18,9 +18,9 @@ const PricingPage = () => {
       <Pricing />
       
       {/* FAQ Section */}
-      <section className="py-24 lg:py-32 bg-bg-secondary">
+      <section className="py-24 lg:py-32 bg-secondary/50">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-black text-center text-text-primary tracking-tight mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-center text-foreground tracking-tight mb-16">
             Frequently asked questions
           </h2>
           
@@ -52,8 +52,8 @@ const PricingPage = () => {
               },
             ].map((faq, i) => (
               <div key={i} className="bg-card p-6 rounded-2xl border border-border hover-lift">
-                <h3 className="text-xl font-bold text-text-primary mb-3">{faq.q}</h3>
-                <p className="text-text-secondary leading-relaxed">{faq.a}</p>
+                <h3 className="text-xl font-bold text-foreground mb-3">{faq.q}</h3>
+                <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -61,21 +61,21 @@ const PricingPage = () => {
       </section>
       
       {/* Comparison Table */}
-      <section className="py-24 lg:py-32 bg-bg-tertiary">
+      <section className="py-24 lg:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-black text-center text-text-primary tracking-tight mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-center text-foreground tracking-tight mb-16">
             Feature comparison
           </h2>
           
           <div className="bg-card rounded-2xl border border-border overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-bg-tertiary">
+                <thead className="bg-secondary/50">
                   <tr>
-                    <th className="text-left p-4 font-bold text-text-primary">Feature</th>
-                    <th className="text-center p-4 font-bold text-text-primary">Starter</th>
-                    <th className="text-center p-4 font-bold text-text-primary">Growth</th>
-                    <th className="text-center p-4 font-bold text-text-primary">Enterprise</th>
+                    <th className="text-left p-4 font-bold text-foreground">Feature</th>
+                    <th className="text-center p-4 font-bold text-foreground">Starter</th>
+                    <th className="text-center p-4 font-bold text-foreground">Growth</th>
+                    <th className="text-center p-4 font-bold text-foreground">Enterprise</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
@@ -90,20 +90,20 @@ const PricingPage = () => {
                     { feature: "Dedicated CSM", starter: false, growth: false, enterprise: true },
                   ].map((row, i) => (
                     <tr key={i}>
-                      <td className="p-4 font-medium text-text-primary">{row.feature}</td>
-                      <td className="p-4 text-center text-text-secondary">
+                      <td className="p-4 font-medium text-foreground">{row.feature}</td>
+                      <td className="p-4 text-center text-muted-foreground">
                         {typeof row.starter === 'boolean' ? (
-                          row.starter ? <Check className="w-5 h-5 text-accent mx-auto" /> : <X className="w-5 h-5 text-text-secondary mx-auto" />
+                          row.starter ? <Check className="w-5 h-5 text-accent mx-auto" /> : <X className="w-5 h-5 text-muted-foreground mx-auto" />
                         ) : row.starter}
                       </td>
-                      <td className="p-4 text-center text-text-secondary">
+                      <td className="p-4 text-center text-muted-foreground">
                         {typeof row.growth === 'boolean' ? (
-                          row.growth ? <Check className="w-5 h-5 text-accent mx-auto" /> : <X className="w-5 h-5 text-text-secondary mx-auto" />
+                          row.growth ? <Check className="w-5 h-5 text-accent mx-auto" /> : <X className="w-5 h-5 text-muted-foreground mx-auto" />
                         ) : row.growth}
                       </td>
-                      <td className="p-4 text-center text-text-secondary">
+                      <td className="p-4 text-center text-muted-foreground">
                         {typeof row.enterprise === 'boolean' ? (
-                          row.enterprise ? <Check className="w-5 h-5 text-accent mx-auto" /> : <X className="w-5 h-5 text-text-secondary mx-auto" />
+                          row.enterprise ? <Check className="w-5 h-5 text-accent mx-auto" /> : <X className="w-5 h-5 text-muted-foreground mx-auto" />
                         ) : row.enterprise}
                       </td>
                     </tr>
