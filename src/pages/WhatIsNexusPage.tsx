@@ -95,7 +95,6 @@ const WhatIsNexusPage = () => {
     {
       icon: GraduationCap,
       title: "Education",
-      color: "bg-blue-500/10 text-blue-500",
       examples: [
         "What courses are available for spring semester?",
         "How do I apply for financial aid?",
@@ -107,7 +106,6 @@ const WhatIsNexusPage = () => {
     {
       icon: Stethoscope,
       title: "Healthcare",
-      color: "bg-rose-500/10 text-rose-500",
       examples: [
         "How do I schedule an appointment?",
         "Where can I find my test results?",
@@ -119,7 +117,6 @@ const WhatIsNexusPage = () => {
     {
       icon: Factory,
       title: "Industrial",
-      color: "bg-amber-500/10 text-amber-500",
       examples: [
         "Show me the safety compliance documents",
         "Where can I find equipment manuals?",
@@ -131,7 +128,6 @@ const WhatIsNexusPage = () => {
     {
       icon: Store,
       title: "E-commerce",
-      color: "bg-emerald-500/10 text-emerald-500",
       examples: [
         "Show me dresses under $100 in size medium",
         "Where's my order? Tracking #ABC123",
@@ -265,8 +261,8 @@ const WhatIsNexusPage = () => {
                   className="bg-card p-6 rounded-3xl border border-border hover:border-accent/30 transition-all"
                 >
                   <div className="flex items-center gap-3 mb-5">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${industry.color.split(' ')[0]}`}>
-                      <industry.icon className={`w-5 h-5 ${industry.color.split(' ')[1]}`} />
+                    <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                      <industry.icon className="w-5 h-5 text-accent" />
                     </div>
                     <h3 className="text-lg font-semibold text-foreground font-sans">{industry.title}</h3>
                   </div>
