@@ -4,33 +4,36 @@ import { Check } from "lucide-react";
 const Pricing = () => {
   const tiers = [
     {
-      name: "Starter",
+      name: "Trial",
       price: "Free",
-      period: "",
+      period: " — Limited Time",
       popular: false,
       features: [
-        "1 workspace",
-        "3 connectors",
+        "Website scraping",
+        "Flat-file uploads (PDFs, Docs, CSVs, etc.)",
+        "Up to 2 basic connectors (optional / non-API)",
         "1,000 queries/month",
-        "Community support",
+        "Full access to the Studio (admin panel)",
+        "Valid for 14 days",
       ],
-      cta: "Get Started",
+      cta: "Start Free Trial",
       variant: "outline" as const,
     },
     {
-      name: "Growth",
-      price: "$299",
+      name: "Pro",
+      price: "$100",
       period: "/mo",
       popular: true,
       features: [
-        "10 workspaces",
-        "All connectors",
+        "Up to 5 integrations (JIRA, Google Workspace, SQL, S3, HubSpot, etc.)",
+        "Website scraping + flat files",
         "50k queries/month",
         "Priority support",
         "Advanced analytics",
         "Custom branding",
+        "Access to Superadmin dashboard",
       ],
-      cta: "Start Trial",
+      cta: "Upgrade to Pro",
       variant: "default" as const,
     },
     {
@@ -39,12 +42,14 @@ const Pricing = () => {
       period: "",
       popular: false,
       features: [
-        "Unlimited workspaces",
+        "Unlimited integrations",
         "SSO & SAML",
         "Custom SLAs",
         "White-label option",
-        "Dedicated CSM",
-        "On-premise deployment",
+        "Dedicated Customer Success Manager",
+        "On-premise / VPC deployment",
+        "Compliance + advanced governance",
+        "Premium support",
       ],
       cta: "Contact Sales",
       variant: "outline" as const,
@@ -74,7 +79,7 @@ const Pricing = () => {
               {tier.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <span className="px-4 py-1.5 bg-accent text-primary text-sm font-bold rounded-full">
-                    POPULAR ★
+                    MOST POPULAR ★
                   </span>
                 </div>
               )}
