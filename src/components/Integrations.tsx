@@ -43,7 +43,7 @@ const Integrations = () => {
             return (
               <div
                 key={i}
-                className="bg-card border border-border rounded-2xl p-6 hover:border-accent/50 transition-all duration-300 group"
+                className="bg-card border border-border rounded-2xl p-6 hover:border-accent/50 hover:scale-105 hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="text-center space-y-3">
                   <div className="flex justify-center">
