@@ -234,6 +234,120 @@ const NexusEducation = () => {
         </div>
       </section>
 
+      {/* Demo Chat Section */}
+      <section className="py-24 lg:py-32 bg-background">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-6">
+                See it in <span className="text-accent">Action</span>
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                Students simply ask questions in natural language. Nexus² connects to your LMS and provides instant, accurate answers.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                  <span className="text-muted-foreground text-lg">No more digging through portals</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                  <span className="text-muted-foreground text-lg">24/7 availability for student queries</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                  <span className="text-muted-foreground text-lg">Personalized responses based on student data</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Chat Demo Window */}
+            <div className="bg-card rounded-2xl border border-border shadow-lg overflow-hidden">
+              {/* Chat Header */}
+              <div className="bg-accent/10 border-b border-border px-6 py-4 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
+                  <MessageCircle className="w-5 h-5 text-accent" />
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">Nexus² Assistant</p>
+                  <p className="text-sm text-muted-foreground">Connected to your LMS</p>
+                </div>
+                <div className="ml-auto flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                  <span className="text-sm text-muted-foreground">Online</span>
+                </div>
+              </div>
+
+              {/* Chat Messages */}
+              <div className="p-6 space-y-4 max-h-[450px] overflow-y-auto">
+                {/* Student Message 1 */}
+                <div className="flex justify-end">
+                  <div className="bg-accent text-accent-foreground px-4 py-3 rounded-2xl rounded-br-md max-w-[80%]">
+                    <p>When is my Data Structures assignment due?</p>
+                  </div>
+                </div>
+                {/* AI Response 1 */}
+                <div className="flex justify-start">
+                  <div className="bg-muted px-4 py-3 rounded-2xl rounded-bl-md max-w-[80%]">
+                    <p className="text-foreground">Your Data Structures assignment "Binary Tree Implementation" is due on <span className="font-semibold text-accent">February 5th at 11:59 PM</span>. You have 8 days remaining. Would you like me to set a reminder?</p>
+                  </div>
+                </div>
+
+                {/* Student Message 2 */}
+                <div className="flex justify-end">
+                  <div className="bg-accent text-accent-foreground px-4 py-3 rounded-2xl rounded-br-md max-w-[80%]">
+                    <p>What's the class average in Calculus II?</p>
+                  </div>
+                </div>
+                {/* AI Response 2 */}
+                <div className="flex justify-start">
+                  <div className="bg-muted px-4 py-3 rounded-2xl rounded-bl-md max-w-[80%]">
+                    <p className="text-foreground">The current class average in Calculus II is <span className="font-semibold text-accent">78.4%</span>. Your grade is 82%, which puts you in the <span className="font-semibold text-accent">top 35%</span> of the class.</p>
+                  </div>
+                </div>
+
+                {/* Student Message 3 */}
+                <div className="flex justify-end">
+                  <div className="bg-accent text-accent-foreground px-4 py-3 rounded-2xl rounded-br-md max-w-[80%]">
+                    <p>What should I study for the Physics midterm?</p>
+                  </div>
+                </div>
+                {/* AI Response 3 */}
+                <div className="flex justify-start">
+                  <div className="bg-muted px-4 py-3 rounded-2xl rounded-bl-md max-w-[80%]">
+                    <p className="text-foreground">Based on your quiz scores, I recommend focusing on:</p>
+                    <ul className="mt-2 space-y-1 text-foreground">
+                      <li>• <span className="font-semibold">Wave mechanics</span> (scored 68%)</li>
+                      <li>• <span className="font-semibold">Thermodynamics</span> (scored 72%)</li>
+                      <li>• Review Chapters 5-8 from the syllabus</li>
+                    </ul>
+                    <p className="mt-2 text-muted-foreground text-sm">Your strongest areas are Kinematics and Electromagnetism.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Chat Input */}
+              <div className="border-t border-border p-4">
+                <div className="flex items-center gap-3">
+                  <input
+                    type="text"
+                    placeholder="Ask about your courses, grades, or schedule..."
+                    className="flex-1 bg-muted/50 border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50"
+                    disabled
+                  />
+                  <button className="w-12 h-12 rounded-xl bg-accent text-accent-foreground flex items-center justify-center hover:bg-accent/90 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                      <path d="m22 2-7 20-4-9-9-4Z" />
+                      <path d="M22 2 11 13" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 lg:py-32 bg-background">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
