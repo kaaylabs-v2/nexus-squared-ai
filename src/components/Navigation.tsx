@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,10 +29,13 @@ const Navigation = () => {
 
   const menuItems = [
     { label: "What is Nexus²", href: "/what-is-nexus" },
-    { label: "Products", href: "/products" },
     { label: "Verticals", href: "/verticals" },
     { label: "Pricing", href: "/pricing" },
     { label: "About", href: "/about" },
+  ];
+
+  const productItems = [
+    { label: "NexGrad", href: "/products/education" },
   ];
 
   return (
@@ -47,7 +56,34 @@ const Navigation = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-8">
-            {menuItems.map((item) => (
+            {menuItems.slice(0, 1).map((item) => (
+              <Link
+                key={item.label}
+                to={item.href}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors font-sans"
+              >
+                {item.label}
+              </Link>
+            ))}
+            
+            {/* Products Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors font-sans outline-none">
+                Products
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="bg-popover">
+                {productItems.map((item) => (
+                  <DropdownMenuItem key={item.label} asChild>
+                    <Link to={item.href} className="cursor-pointer">
+                      {item.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {menuItems.slice(1).map((item) => (
               <Link
                 key={item.label}
                 to={item.href}
@@ -85,7 +121,28 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-card border-t border-border">
             <div className="px-4 py-6 space-y-4">
-              {menuItems.map((item) => (
+              <Link
+                to="/what-is-nexus"
+                className="block text-muted-foreground hover:text-foreground transition-colors py-2 font-sans"
+              >
+                What is Nexus²
+              </Link>
+              
+              {/* Products Section */}
+              <div className="space-y-2">
+                <span className="block text-foreground font-medium py-2 font-sans">Products</span>
+                {productItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    to={item.href}
+                    className="block text-muted-foreground hover:text-foreground transition-colors py-2 pl-4 font-sans"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+
+              {menuItems.slice(1).map((item) => (
                 <Link
                   key={item.label}
                   to={item.href}
