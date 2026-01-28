@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { GraduationCap, Users, Lightbulb, BookOpen, Calendar, FileText, MessageCircle, TrendingUp, School, ClipboardCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const NexusEducation = () => {
+  const [activeTab, setActiveTab] = useState<"students" | "parents">("students");
   const problems = [
     "Information spread across websites, PDFs, notices",
     "Repetitive queries during admissions and placements",
@@ -243,26 +245,72 @@ const NexusEducation = () => {
                 See it in <span className="text-accent">Action</span>
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                Students simply ask questions in natural language. Nexus² connects to your LMS and provides instant, accurate answers.
+                {activeTab === "students" 
+                  ? "Students simply ask questions in natural language. Nexus² connects to your LMS and provides instant, accurate answers."
+                  : "Parents get instant answers about admissions, fees, and campus life. No more waiting on hold or searching through websites."
+                }
               </p>
               <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
-                  <span className="text-muted-foreground text-lg">No more digging through portals</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
-                  <span className="text-muted-foreground text-lg">24/7 availability for student queries</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
-                  <span className="text-muted-foreground text-lg">Personalized responses based on student data</span>
-                </li>
+                {activeTab === "students" ? (
+                  <>
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                      <span className="text-muted-foreground text-lg">No more digging through portals</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                      <span className="text-muted-foreground text-lg">24/7 availability for student queries</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                      <span className="text-muted-foreground text-lg">Personalized responses based on student data</span>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                      <span className="text-muted-foreground text-lg">Instant answers to admission queries</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                      <span className="text-muted-foreground text-lg">Fee structures and payment information</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                      <span className="text-muted-foreground text-lg">Campus facilities and accommodation details</span>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
 
             {/* Chat Demo Window */}
             <div className="bg-card rounded-2xl border border-border shadow-lg overflow-hidden">
+              {/* Tab Switcher */}
+              <div className="flex border-b border-border">
+                <button
+                  onClick={() => setActiveTab("students")}
+                  className={`flex-1 px-6 py-4 text-sm font-medium transition-colors ${
+                    activeTab === "students"
+                      ? "bg-accent/10 text-accent border-b-2 border-accent"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                  }`}
+                >
+                  For Students
+                </button>
+                <button
+                  onClick={() => setActiveTab("parents")}
+                  className={`flex-1 px-6 py-4 text-sm font-medium transition-colors ${
+                    activeTab === "parents"
+                      ? "bg-accent/10 text-accent border-b-2 border-accent"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                  }`}
+                >
+                  For Parents
+                </button>
+              </div>
+
               {/* Chat Header */}
               <div className="bg-accent/10 border-b border-border px-6 py-4 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
@@ -270,7 +318,9 @@ const NexusEducation = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">Nexus² Assistant</p>
-                  <p className="text-sm text-muted-foreground">Connected to your LMS</p>
+                  <p className="text-sm text-muted-foreground">
+                    {activeTab === "students" ? "Connected to your LMS" : "Admissions & Campus Info"}
+                  </p>
                 </div>
                 <div className="ml-auto flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
@@ -280,50 +330,119 @@ const NexusEducation = () => {
 
               {/* Chat Messages */}
               <div className="p-6 space-y-4 max-h-[450px] overflow-y-auto">
-                {/* Student Message 1 */}
-                <div className="flex justify-end">
-                  <div className="bg-accent text-accent-foreground px-4 py-3 rounded-2xl rounded-br-md max-w-[80%]">
-                    <p>When is my Data Structures assignment due?</p>
-                  </div>
-                </div>
-                {/* AI Response 1 */}
-                <div className="flex justify-start">
-                  <div className="bg-muted px-4 py-3 rounded-2xl rounded-bl-md max-w-[80%]">
-                    <p className="text-foreground">Your Data Structures assignment "Binary Tree Implementation" is due on <span className="font-semibold text-accent">February 5th at 11:59 PM</span>. You have 8 days remaining. Would you like me to set a reminder?</p>
-                  </div>
-                </div>
+                {activeTab === "students" ? (
+                  <>
+                    {/* Student Message 1 */}
+                    <div className="flex justify-end">
+                      <div className="bg-accent text-accent-foreground px-4 py-3 rounded-2xl rounded-br-md max-w-[80%]">
+                        <p>When is my Data Structures assignment due?</p>
+                      </div>
+                    </div>
+                    {/* AI Response 1 */}
+                    <div className="flex justify-start">
+                      <div className="bg-muted px-4 py-3 rounded-2xl rounded-bl-md max-w-[80%]">
+                        <p className="text-foreground">Your Data Structures assignment "Binary Tree Implementation" is due on <span className="font-semibold text-accent">February 5th at 11:59 PM</span>. You have 8 days remaining. Would you like me to set a reminder?</p>
+                      </div>
+                    </div>
 
-                {/* Student Message 2 */}
-                <div className="flex justify-end">
-                  <div className="bg-accent text-accent-foreground px-4 py-3 rounded-2xl rounded-br-md max-w-[80%]">
-                    <p>What's the class average in Calculus II?</p>
-                  </div>
-                </div>
-                {/* AI Response 2 */}
-                <div className="flex justify-start">
-                  <div className="bg-muted px-4 py-3 rounded-2xl rounded-bl-md max-w-[80%]">
-                    <p className="text-foreground">The current class average in Calculus II is <span className="font-semibold text-accent">78.4%</span>. Your grade is 82%, which puts you in the <span className="font-semibold text-accent">top 35%</span> of the class.</p>
-                  </div>
-                </div>
+                    {/* Student Message 2 */}
+                    <div className="flex justify-end">
+                      <div className="bg-accent text-accent-foreground px-4 py-3 rounded-2xl rounded-br-md max-w-[80%]">
+                        <p>What's the class average in Calculus II?</p>
+                      </div>
+                    </div>
+                    {/* AI Response 2 */}
+                    <div className="flex justify-start">
+                      <div className="bg-muted px-4 py-3 rounded-2xl rounded-bl-md max-w-[80%]">
+                        <p className="text-foreground">The current class average in Calculus II is <span className="font-semibold text-accent">78.4%</span>. Your grade is 82%, which puts you in the <span className="font-semibold text-accent">top 35%</span> of the class.</p>
+                      </div>
+                    </div>
 
-                {/* Student Message 3 */}
-                <div className="flex justify-end">
-                  <div className="bg-accent text-accent-foreground px-4 py-3 rounded-2xl rounded-br-md max-w-[80%]">
-                    <p>What should I study for the Physics midterm?</p>
-                  </div>
-                </div>
-                {/* AI Response 3 */}
-                <div className="flex justify-start">
-                  <div className="bg-muted px-4 py-3 rounded-2xl rounded-bl-md max-w-[80%]">
-                    <p className="text-foreground">Based on your quiz scores, I recommend focusing on:</p>
-                    <ul className="mt-2 space-y-1 text-foreground">
-                      <li>• <span className="font-semibold">Wave mechanics</span> (scored 68%)</li>
-                      <li>• <span className="font-semibold">Thermodynamics</span> (scored 72%)</li>
-                      <li>• Review Chapters 5-8 from the syllabus</li>
-                    </ul>
-                    <p className="mt-2 text-muted-foreground text-sm">Your strongest areas are Kinematics and Electromagnetism.</p>
-                  </div>
-                </div>
+                    {/* Student Message 3 */}
+                    <div className="flex justify-end">
+                      <div className="bg-accent text-accent-foreground px-4 py-3 rounded-2xl rounded-br-md max-w-[80%]">
+                        <p>What should I study for the Physics midterm?</p>
+                      </div>
+                    </div>
+                    {/* AI Response 3 */}
+                    <div className="flex justify-start">
+                      <div className="bg-muted px-4 py-3 rounded-2xl rounded-bl-md max-w-[80%]">
+                        <p className="text-foreground">Based on your quiz scores, I recommend focusing on:</p>
+                        <ul className="mt-2 space-y-1 text-foreground">
+                          <li>• <span className="font-semibold">Wave mechanics</span> (scored 68%)</li>
+                          <li>• <span className="font-semibold">Thermodynamics</span> (scored 72%)</li>
+                          <li>• Review Chapters 5-8 from the syllabus</li>
+                        </ul>
+                        <p className="mt-2 text-muted-foreground text-sm">Your strongest areas are Kinematics and Electromagnetism.</p>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    {/* Parent Message 1 */}
+                    <div className="flex justify-end">
+                      <div className="bg-accent text-accent-foreground px-4 py-3 rounded-2xl rounded-br-md max-w-[80%]">
+                        <p>What are the requirements for admission to the Computer Science program?</p>
+                      </div>
+                    </div>
+                    {/* AI Response 1 */}
+                    <div className="flex justify-start">
+                      <div className="bg-muted px-4 py-3 rounded-2xl rounded-bl-md max-w-[80%]">
+                        <p className="text-foreground">For B.Tech Computer Science admission, the requirements are:</p>
+                        <ul className="mt-2 space-y-1 text-foreground">
+                          <li>• Minimum <span className="font-semibold text-accent">75% in 12th grade</span> (PCM)</li>
+                          <li>• Valid JEE/entrance exam score</li>
+                          <li>• English proficiency certificate</li>
+                        </ul>
+                        <p className="mt-2 text-muted-foreground text-sm">Would you like me to share the detailed admission brochure?</p>
+                      </div>
+                    </div>
+
+                    {/* Parent Message 2 */}
+                    <div className="flex justify-end">
+                      <div className="bg-accent text-accent-foreground px-4 py-3 rounded-2xl rounded-br-md max-w-[80%]">
+                        <p>When is the last date to apply?</p>
+                      </div>
+                    </div>
+                    {/* AI Response 2 */}
+                    <div className="flex justify-start">
+                      <div className="bg-muted px-4 py-3 rounded-2xl rounded-bl-md max-w-[80%]">
+                        <p className="text-foreground">The application deadline for the 2026-27 academic year is <span className="font-semibold text-accent">March 15th, 2026</span>. Early bird applications close on <span className="font-semibold text-accent">February 28th</span> with a ₹2,000 fee waiver.</p>
+                      </div>
+                    </div>
+
+                    {/* Parent Message 3 */}
+                    <div className="flex justify-end">
+                      <div className="bg-accent text-accent-foreground px-4 py-3 rounded-2xl rounded-br-md max-w-[80%]">
+                        <p>Is there a sports scholarship available?</p>
+                      </div>
+                    </div>
+                    {/* AI Response 3 */}
+                    <div className="flex justify-start">
+                      <div className="bg-muted px-4 py-3 rounded-2xl rounded-bl-md max-w-[80%]">
+                        <p className="text-foreground">Yes! We offer sports scholarships covering <span className="font-semibold text-accent">up to 50% of tuition</span> for state/national level athletes. Required documents:</p>
+                        <ul className="mt-2 space-y-1 text-foreground">
+                          <li>• Sports achievement certificates</li>
+                          <li>• Recommendation from sports authority</li>
+                          <li>• Fitness clearance</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Parent Message 4 */}
+                    <div className="flex justify-end">
+                      <div className="bg-accent text-accent-foreground px-4 py-3 rounded-2xl rounded-br-md max-w-[80%]">
+                        <p>Do you provide AC hostel rooms?</p>
+                      </div>
+                    </div>
+                    {/* AI Response 4 */}
+                    <div className="flex justify-start">
+                      <div className="bg-muted px-4 py-3 rounded-2xl rounded-bl-md max-w-[80%]">
+                        <p className="text-foreground">Yes, we have <span className="font-semibold text-accent">air-conditioned hostel rooms</span> available in both single and double occupancy. AC room fees are ₹15,000/month additional. Non-AC options start at ₹8,000/month.</p>
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
 
               {/* Chat Input */}
@@ -331,7 +450,10 @@ const NexusEducation = () => {
                 <div className="flex items-center gap-3">
                   <input
                     type="text"
-                    placeholder="Ask about your courses, grades, or schedule..."
+                    placeholder={activeTab === "students" 
+                      ? "Ask about your courses, grades, or schedule..." 
+                      : "Ask about admissions, fees, or campus facilities..."
+                    }
                     className="flex-1 bg-muted/50 border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50"
                     disabled
                   />
