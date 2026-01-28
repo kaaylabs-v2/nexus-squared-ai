@@ -35,6 +35,7 @@ const Navigation = () => {
   ];
 
   const productItems = [
+    { label: "Nexus Flagship", href: "/products" },
     { label: "NexGrad", href: "/products/education" },
   ];
 
