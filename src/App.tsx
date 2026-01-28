@@ -8,7 +8,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 // import ChatWidget from "@/components/ChatWidget";
 import Home from "./pages/Home";
-import Product from "./pages/Product";
+import Products from "./pages/Products";
+import NexusEducation from "./pages/NexusEducation";
 import Verticals from "./pages/Verticals";
 import PricingPage from "./pages/PricingPage";
 import About from "./pages/About";
@@ -30,7 +31,8 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/what-is-nexus" element={<WhatIsNexusPage />} />
-              <Route path="/product" element={<Product />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/education" element={<NexusEducation />} />
               <Route path="/verticals" element={<Verticals />} />
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/about" element={<About />} />
