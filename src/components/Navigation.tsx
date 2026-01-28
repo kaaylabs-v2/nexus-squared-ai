@@ -23,7 +23,7 @@ const Navigation = () => {
 
   const menuItems = [
     { label: "What is Nexus²", href: "/what-is-nexus" },
-    { label: "Product", href: "/product" },
+    { label: "Products", href: "/products" },
     { label: "Verticals", href: "/verticals" },
     { label: "Pricing", href: "/pricing" },
     { label: "About", href: "/about" },
