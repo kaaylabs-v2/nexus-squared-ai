@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import studentPortalDashboard from "@/assets/student-portal-dashboard.png";
 import studentPortalDoubtSolver from "@/assets/student-portal-doubt-solver.png";
+import studentPortalExams from "@/assets/student-portal-exams.png";
 
 const NexusEducation = () => {
   const [activeTab, setActiveTab] = useState<"students" | "parents">("students");
@@ -490,8 +491,9 @@ const NexusEducation = () => {
           </div>
 
           <Tabs defaultValue="dashboard" className="w-full">
-            <TabsList className="w-full max-w-md mx-auto grid grid-cols-2 mb-8">
+            <TabsList className="w-full max-w-2xl mx-auto grid grid-cols-3 mb-8">
               <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
+              <TabsTrigger value="exams">Exams</TabsTrigger>
               <TabsTrigger value="doubt-solver">Doubt Solver</TabsTrigger>
             </TabsList>
             
@@ -500,6 +502,17 @@ const NexusEducation = () => {
                 <img 
                   src={studentPortalDashboard} 
                   alt="Student Portal Dashboard showing progress tracking, exam readiness, and quick actions"
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
+              </div>
+            </TabsContent>
+
+            <TabsContent value="exams" className="mt-0">
+              <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl">
+                <img 
+                  src={studentPortalExams} 
+                  alt="Exams view showing syllabus coverage, exam dates, and preparation overview"
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
