@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-// import ChatWidget from "@/components/ChatWidget";
+import ChatWidget from "@/components/ChatWidget";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import NexusEducation from "./pages/NexusEducation";
@@ -41,7 +41,7 @@ const App = () => (
             </Routes>
           </main>
           <Footer />
-          {/* <ChatWidget /> */}
+          <ChatWidget />
         </div>
       </BrowserRouter>
     </TooltipProvider>
