@@ -88,8 +88,8 @@ const NexusEducation = () => {
               faculty, and administrators find information instantly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-base px-8">
-                Request a Demo
+              <Button size="lg" className="text-base px-8" asChild>
+                <Link to="/request-demo">Request a Demo</Link>
               </Button>
               <Button size="lg" variant="outline" className="text-base px-8">
                 Learn More
@@ -543,8 +543,8 @@ const NexusEducation = () => {
             Join institutions that are using Nexus² to improve student experience and reduce administrative overhead.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-base px-8">
-              Request a Demo
+            <Button size="lg" className="text-base px-8" asChild>
+              <Link to="/request-demo">Request a Demo</Link>
             </Button>
             <Link to="/products">
               <Button size="lg" variant="outline" className="text-base px-8">
