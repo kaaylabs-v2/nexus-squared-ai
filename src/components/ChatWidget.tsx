@@ -82,7 +82,7 @@ const ChatWidget = () => {
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
           "fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 z-50",
-          "bg-accent text-primary hover:scale-110",
+          "bg-accent text-accent-foreground hover:scale-110",
           isOpen && "scale-0"
         )}
         aria-label="Open chat"
