@@ -98,9 +98,6 @@ const Navigation = () => {
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-4">
             <ThemeToggle />
-            <Link to="/signin" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors font-sans">
-              Sign in
-            </Link>
             <Button size="sm" asChild>
               <Link to="/request-demo">Request a demo</Link>
             </Button>
@@ -152,10 +149,7 @@ const Navigation = () => {
                   {item.label}
                 </Link>
               ))}
-              <div className="pt-4 space-y-3 border-t border-border">
-                <Link to="/signin" className="block text-center text-muted-foreground hover:text-foreground transition-colors py-2">
-                  Sign in
-                </Link>
+              <div className="pt-4 border-t border-border">
                 <Button className="w-full" asChild>
                   <Link to="/request-demo">Request a demo</Link>
                 </Button>
