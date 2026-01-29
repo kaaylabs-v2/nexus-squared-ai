@@ -1,7 +1,10 @@
 import { useState } from "react";
-import { GraduationCap, Users, Lightbulb, BookOpen, Calendar, FileText, MessageCircle, TrendingUp, School, ClipboardCheck } from "lucide-react";
+import { GraduationCap, Users, Lightbulb, BookOpen, Calendar, FileText, MessageCircle, TrendingUp, School, ClipboardCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import studentPortalDashboard from "@/assets/student-portal-dashboard.png";
+import studentPortalDoubtSolver from "@/assets/student-portal-doubt-solver.png";
 
 const NexusEducation = () => {
   const [activeTab, setActiveTab] = useState<"students" | "parents">("students");
@@ -467,6 +470,53 @@ const NexusEducation = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Student Portal Coming Soon */}
+      <section className="py-24 lg:py-32 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
+              <Sparkles className="w-4 h-4 text-accent" />
+              <span className="text-sm font-medium text-accent">Coming Next Semester</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-6">
+              Student <span className="text-accent">Portal</span>
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              A comprehensive dashboard for students to track progress, manage study plans, and get AI-powered assistance.
+            </p>
+          </div>
+
+          <Tabs defaultValue="dashboard" className="w-full">
+            <TabsList className="w-full max-w-md mx-auto grid grid-cols-2 mb-8">
+              <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
+              <TabsTrigger value="doubt-solver">Doubt Solver</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="dashboard" className="mt-0">
+              <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl">
+                <img 
+                  src={studentPortalDashboard} 
+                  alt="Student Portal Dashboard showing progress tracking, exam readiness, and quick actions"
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="doubt-solver" className="mt-0">
+              <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl">
+                <img 
+                  src={studentPortalDoubtSolver} 
+                  alt="Doubt Solver AI chat interface for course-related questions"
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
 
