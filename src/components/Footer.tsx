@@ -16,22 +16,6 @@ const Footer = () => {
       links: [
         { label: "About", to: "/about" },
         { label: "Verticals", to: "/verticals" },
-        { label: "Contact", to: "/about" },
-      ],
-    },
-    {
-      title: "Resources",
-      links: [
-        { label: "Documentation", to: "#" },
-        { label: "Blog", to: "#" },
-        { label: "Support", to: "#" },
-      ],
-    },
-    {
-      title: "Legal",
-      links: [
-        { label: "Privacy Policy", to: "#" },
-        { label: "Terms of Service", to: "#" },
       ],
     },
   ];
