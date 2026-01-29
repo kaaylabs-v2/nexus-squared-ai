@@ -14,6 +14,7 @@ import Verticals from "./pages/Verticals";
 import PricingPage from "./pages/PricingPage";
 import About from "./pages/About";
 import WhatIsNexusPage from "./pages/WhatIsNexusPage";
+import RequestDemo from "./pages/RequestDemo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App = () => (
               <Route path="/verticals" element={<Verticals />} />
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/about" element={<About />} />
+              <Route path="/request-demo" element={<RequestDemo />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -101,8 +101,8 @@ const Navigation = () => {
             <Link to="/signin" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors font-sans">
               Sign in
             </Link>
-            <Button size="sm">
-              Request a demo
+            <Button size="sm" asChild>
+              <Link to="/request-demo">Request a demo</Link>
             </Button>
           </div>
 
@@ -156,8 +156,8 @@ const Navigation = () => {
                 <Link to="/signin" className="block text-center text-muted-foreground hover:text-foreground transition-colors py-2">
                   Sign in
                 </Link>
-                <Button className="w-full">
-                  Request a demo
+                <Button className="w-full" asChild>
+                  <Link to="/request-demo">Request a demo</Link>
                 </Button>
               </div>
             </div>
