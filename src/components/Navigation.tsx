@@ -29,7 +29,7 @@ const Navigation = () => {
 
   const menuItems = [
     { label: "What is Nexus²", href: "/what-is-nexus" },
-    { label: "Verticals", href: "/verticals" },
+    { label: "Industries", href: "/verticals" },
     { label: "Pricing", href: "/pricing" },
     { label: "About", href: "/about" },
   ];
