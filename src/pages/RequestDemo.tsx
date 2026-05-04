@@ -42,17 +42,25 @@ const RequestDemo = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     setErrors({});
 
     // Validate form data
     const result = demoRequestSchema.safeParse(formData);
+
     if (!result.success) {
-      const fieldErrors: Partial<Record<keyof DemoRequestFormData, string>> = {};
+      const fieldErrors: Partial<
+        Record<keyof DemoRequestFormData, string>
+      > = {};
+
       result.error.errors.forEach((err) => {
         if (err.path[0]) {
-          fieldErrors[err.path[0] as keyof DemoRequestFormData] = err.message;
+          fieldErrors[
+            err.path[0] as keyof DemoRequestFormData
+          ] = err.message;
         }
       });
+
       setErrors(fieldErrors);
       return;
     }
@@ -60,30 +68,123 @@ const RequestDemo = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.from("demo_requests").insert({
-        name: result.data.name,
-        email: result.data.email,
-        company: result.data.company || null,
-        phone: result.data.phone || null,
-        message: result.data.message || null,
-      });
 
-      if (error) throw error;
+      // Save to Supabase
+      const { error } = await supabase
+        .from("demo_requests")
+        .insert({
+          name: result.data.name,
+          email: result.data.email,
+          company: result.data.company || null,
+          phone: result.data.phone || null,
+          message: result.data.message || null,
+        });
 
+      if (error) {
+        throw error;
+      }
+
+      // Email Payload
+      const payload = {
+        channel: "mail",
+
+        template_name:
+          import.meta.env
+            .VITE_NEXUS_SEND_TEMPALTE_NAME,
+
+        email: {
+          data: {
+            from:
+              import.meta.env
+                .VITE_NEXUS_SEND_MESSAGE_FROM,
+
+            to:
+              import.meta.env
+                .VITE_NEXUS_SEND_MESSAGE_TO,
+
+            reply_to_email_address:
+              result.data.email,
+
+            subject:
+              import.meta.env
+                .VITE_NEXUS_SEND_MESSAGE_SUBJECT,
+          },
+
+          params: [
+            result.data.name || "N/A", // {{1}}
+            result.data.email || "N/A", // {{2}}
+            result.data.company || "N/A", // {{3}}
+            result.data.phone || "N/A", // {{4}}
+            result.data.message || "N/A", // {{5}}
+            new Date().toLocaleString(), // {{6}}
+          ],
+        },
+      };
+
+      console.log("EMAIL PAYLOAD:", payload, import.meta.env.VITE_NEXUS_SEND_MESSAGE_URL);
+
+      // Send Email
+      const response = await fetch(
+        import.meta.env.VITE_NEXUS_SEND_MESSAGE_URL,
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+
+            "api-key":
+              import.meta.env
+                .VITE_NEXUS_SEND_MESSAGE_API_KEY,
+          },
+
+          body: JSON.stringify(payload),
+        }
+      );
+
+      const responseText = await response.text();
+
+      console.log("EMAIL RESPONSE:", responseText);
+
+      if (!response.ok) {
+        throw new Error(
+          responseText || "Failed to send email"
+        );
+      }
+
+      // Success
       setIsSubmitted(true);
+
       toast({
         title: "Demo request submitted!",
-        description: "We'll be in touch shortly.",
+        description:
+          "We'll be in touch shortly.",
       });
+
+      // Reset Form
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        phone: "",
+        message: "",
+      });
+
     } catch (error) {
-      console.error("Error submitting demo request:", error);
+
+      console.error("SUBMIT ERROR:", error);
+
       toast({
         title: "Something went wrong",
-        description: "Please try again later.",
+        description:
+          error?.message ||
+          "Please try again later.",
         variant: "destructive",
       });
+
     } finally {
+
       setIsSubmitting(false);
+
     }
   };
 
