@@ -38,6 +38,7 @@ aws s3 cp s3://kaaylabs-operations-new/config/gig-street-api/gig-street-api-qa/c
 DevBuild
 elif [[ "$GIT_BRANCH" == "main" ]];
 then
+aws s3 cp s3://kaaylabs-operations-new/config/nexus-squared-ai/.env . --profile new-kaaylabs
 startBuild
 else
 echo "Skipping a build process because this branch is not permitted for docker build: ${GIT_BRANCH}"
