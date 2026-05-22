@@ -9,7 +9,10 @@ import Footer from "@/components/Footer";
 // import ChatWidget from "@/components/ChatWidget";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
-import NexusEducation from "./pages/NexusEducation";
+import ProductEducation from "./pages/ProductEducation";
+import ProductEnterprise from "./pages/ProductEnterprise";
+import ProductEcommerce from "./pages/ProductEcommerce";
+import ProductHealthcare from "./pages/ProductHealthcare";
 import Verticals from "./pages/Verticals";
 import PricingPage from "./pages/PricingPage";
 import About from "./pages/About";
@@ -33,7 +36,10 @@ const App = () => (
               <Route path="/" element={<Home />} />
               <Route path="/what-is-nexus" element={<WhatIsNexusPage />} />
               <Route path="/products" element={<Products />} />
-              <Route path="/products/education" element={<NexusEducation />} />
+              <Route path="/products/education" element={<ProductEducation />} />
+              <Route path="/products/enterprise" element={<ProductEnterprise />} />
+              <Route path="/products/ecommerce" element={<ProductEcommerce />} />
+              <Route path="/products/healthcare" element={<ProductHealthcare />} />
               <Route path="/verticals" element={<Verticals />} />
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/about" element={<About />} />
