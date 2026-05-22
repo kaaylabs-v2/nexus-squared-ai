@@ -1,93 +1,122 @@
 import { Link } from "react-router-dom";
-import { GraduationCap, Building2, ShoppingBag, Heart, ArrowRight } from "lucide-react";
-import CoreFeatures from "@/components/CoreFeatures";
-import HowItWorks from "@/components/HowItWorks";
-import DemoVideo from "@/components/DemoVideo";
-import Security from "@/components/Security";
+import { GraduationCap, Building2, ShoppingBag, Heart, ArrowRight, ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import FlowMap from "@/components/FlowMap";
 
 const Products = () => {
   const productVerticals = [
     {
       icon: GraduationCap,
       title: "Nexus for Education",
-      description: "Transform campus experience with AI-powered navigation for students, faculty, and administrators.",
+      blurb: "Campus answers for students, faculty, and admins — in one assistant.",
       href: "/products/education",
-      available: true,
     },
     {
       icon: Building2,
       title: "Nexus for Enterprise",
-      description: "Streamline internal communications and help employees find information instantly.",
+      blurb: "Internal knowledge, unblocked — policies, tools, and people, instantly.",
       href: "/products/enterprise",
-      available: false,
     },
     {
       icon: ShoppingBag,
       title: "Nexus for E-commerce",
-      description: "Help shoppers find products, check shipping, and navigate categories with ease.",
+      blurb: "Product discovery, order help, and checkout assist that actually converts.",
       href: "/products/ecommerce",
-      available: false,
     },
     {
       icon: Heart,
       title: "Nexus for Healthcare",
-      description: "Assist patients with appointments, insurance queries, and facility navigation.",
+      blurb: "Appointments, insurance, facility wayfinding — guided with care.",
       href: "/products/healthcare",
-      available: false,
     },
   ];
 
   return (
-    <div className="pt-20">
-      {/* Products Hero */}
-      <section className="py-24 lg:py-32 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-black text-foreground tracking-tight mb-6">
-              Our <span className="text-accent">Products</span>
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Nexus² adapts to your industry with specialized solutions designed for specific use cases.
-            </p>
-          </div>
+    <div className="pt-20 bg-background">
+      {/* HERO */}
+      <section className="py-24 lg:py-32">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
+          <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-medium tracking-wide uppercase mb-8 font-sans">
+            Solutions
+          </span>
+          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight mb-8">
+            Nexus² for <em className="text-accent not-italic font-serif italic">your industry</em>.
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-sans">
+            The same orchestration layer, shaped for how each industry actually works —
+            one brain, your tools, your language.
+          </p>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {productVerticals.map((product, i) => (
-              <div
+      {/* FOUR CARDS */}
+      <section className="pb-24 lg:pb-32">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-6">
+            {productVerticals.map((p, i) => (
+              <Link
                 key={i}
-                className={`bg-card p-8 rounded-2xl border border-border transition-all duration-300 ${
-                  product.available ? "hover:border-accent/30 hover:shadow-lg" : "opacity-60"
-                }`}
+                to={p.href}
+                className="group bg-card p-8 lg:p-10 rounded-2xl border border-border hover:border-accent/40 hover:shadow-[0_8px_30px_-12px_hsl(var(--accent)/0.15)] transition-all duration-300"
               >
-                <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <product.icon className="w-7 h-7 text-accent" />
+                <div className="flex flex-col gap-6 h-full">
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                    <p.icon className="w-6 h-6 text-accent" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-foreground mb-2">{product.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">{product.description}</p>
-                    {product.available ? (
-                      <Link
-                        to={product.href}
-                        className="inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all"
-                      >
-                        Learn more <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    ) : (
-                      <span className="text-sm text-muted-foreground italic">Coming soon</span>
-                    )}
+                    <h3 className="font-serif text-2xl text-foreground mb-3 tracking-tight">
+                      {p.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed font-sans">{p.blurb}</p>
                   </div>
+                  <span className="inline-flex items-center gap-2 text-accent font-medium text-sm font-sans group-hover:gap-3 transition-all">
+                    Learn more <ArrowRight className="w-4 h-4" />
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <CoreFeatures />
-      <DemoVideo />
-      <HowItWorks />
-      <Security />
+      {/* SHARED LAYER */}
+      <section className="py-24 lg:py-32 border-t border-border bg-secondary/40">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
+          <p className="text-sm uppercase tracking-widest text-muted-foreground font-sans mb-6">
+            One layer, many shapes
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-tight tracking-tight mb-4">
+            Different industries, one orchestration layer underneath.
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-sans mb-8">
+            Every vertical sits on the same reasoning, retrieval, and action engine — only
+            the vocabulary, sources, and workflows change.
+          </p>
+          <FlowMap />
+        </div>
+      </section>
+
+      {/* CTA BAND */}
+      <section className="py-24 lg:py-32">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-tight tracking-tight mb-6">
+            See Nexus² shaped for your world.
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto font-sans mb-10">
+            Bring your sources, your tools, your tone. We'll show you the same brain, fluent in your domain.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" asChild>
+              <Link to="/request-demo">
+                Request a demo <ArrowUpRight className="ml-1 w-4 h-4" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="link" className="underline underline-offset-4" asChild>
+              <Link to="/verticals">Browse industries</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
