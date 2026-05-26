@@ -16,6 +16,17 @@ const config: VerticalConfig = {
     sources: ["Website", "Course catalog", "LMS", "Student portal", "Handbooks & PDFs", "Department sites", "Library system"],
     surfaces: ["Chat", "Voice", "Search", "Agents", "Workflows"],
   },
+  proof: [
+    { value: 67, suffix: "%", label: "More completed applications" },
+    { value: 4.2, decimals: 1, suffix: "×", label: "Campus visit requests" },
+    { value: 85, suffix: "%", label: "Faster response time" },
+  ],
+  caseStudy: {
+    company: "State Community College",
+    problem: "8,000 pages of content spread across the LMS, registrar, and department sites. Prospective students couldn't find application requirements or deadlines.",
+    implementation: "Nexus² trained on programs, admission criteria, financial aid, and campus resources. Wired into the registrar for live deadline data.",
+    result: "Completed applications rose 67%, campus visit requests 4.2×, and the admissions team cut average response time by 85%.",
+  },
   connectors: {
     groups: [
       { label: "Learning platforms", items: ["Canvas", "Blackboard", "Banner", "Workday Student"] },

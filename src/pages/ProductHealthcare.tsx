@@ -18,6 +18,17 @@ const config: VerticalConfig = {
     sources: ["Website", "Scheduling system", "Patient portal docs", "Insurance & coverage info", "Provider directory", "Facility & department info", "FAQs & policy docs"],
     surfaces: ["Patient assistant", "Voice", "Search", "Agents", "Workflows"],
   },
+  proof: [
+    { value: 5, suffix: "×", label: "More online appointments" },
+    { value: 73, suffix: "%", label: "Reduced phone inquiries" },
+    { value: 89, suffix: "%", label: "Patient satisfaction" },
+  ],
+  caseStudy: {
+    company: "Regional Medical Group",
+    problem: "12 locations, 140+ providers, and phone lines overwhelmed with 'where do I go' and 'do you take my insurance' calls.",
+    implementation: "Nexus² connected to the provider directory, insurance & coverage docs, scheduling system, and facility info — with clinical questions routed to staff.",
+    result: "Online appointments grew 5×, phone inquiries dropped 73%, and patient satisfaction reached 89% within two quarters.",
+  },
   connectors: {
     note: "Administrative and informational sources only — no PHI/EHR ingestion required.",
     groups: [
