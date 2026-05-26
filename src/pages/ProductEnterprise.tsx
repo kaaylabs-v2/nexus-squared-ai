@@ -16,6 +16,17 @@ const config: VerticalConfig = {
     sources: ["Jira", "Confluence", "Google Workspace", "Slack", "SharePoint", "SQL databases", "Amazon S3", "CRM", "Internal wikis", "PDFs"],
     surfaces: ["Internal Chat", "Search", "Voice", "Agents", "Workflows", "API"],
   },
+  proof: [
+    { value: 4, suffix: "×", label: "Faster internal answers" },
+    { value: 62, suffix: "%", label: "Faster employee onboarding" },
+    { value: 41, suffix: "%", label: "Lower internal support load" },
+  ],
+  caseStudy: {
+    company: "B2B Analytics Platform",
+    problem: "Teams asked the same questions across Slack, Jira and Confluence every week. New hires took weeks to find the right docs. Critical answers lived in one person's head.",
+    implementation: "Deployed Nexus² across the company's Confluence, Jira, Slack and SharePoint — with SSO and per-team permissions respected end-to-end.",
+    result: "Repeat questions dropped sharply, onboarding ramped 62% faster, and the support team handled 41% fewer 'where do I find…' requests.",
+  },
   connectors: {
     groups: [
       { label: "Work & docs", items: ["Jira", "Confluence", "Google Workspace", "SharePoint", "Notion", "Slack"] },

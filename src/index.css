@@ -17,8 +17,8 @@
     
     /* Brand Colors - Green/Emerald */
     --color-primary: 220 9% 12%;          /* Near black for text/buttons */
-    --color-accent: 160 84% 39%;          /* Emerald green */
-    --color-accent-glow: 160 84% 45%;     /* For glow effects */
+    --color-accent: 143 19% 53%;          /* Brand sage #6E9F82 */
+    --color-accent-glow: 143 22% 58%;     /* For glow effects */
     
     /* Text Colors */
     --text-primary: 220 9% 12%;           /* Near black */
@@ -79,8 +79,8 @@
     
     /* Brand Colors */
     --color-primary: 0 0% 100%;           /* White for dark mode */
-    --color-accent: 160 84% 45%;          /* Emerald green (brighter for dark) */
-    --color-accent-glow: 160 84% 50%;     /* For glow effects */
+    --color-accent: 143 22% 60%;          /* Brand sage (brighter for dark) */
+    --color-accent-glow: 143 26% 65%;     /* For glow effects */
     
     /* Text Colors */
     --text-primary: 0 0% 98%;             /* Near white */

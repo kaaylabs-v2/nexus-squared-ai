@@ -16,6 +16,17 @@ const config: VerticalConfig = {
     sources: ["Product catalog", "Store (Shopify)", "Inventory database", "Order system", "Shipping & returns policy", "Reviews", "Blog / CMS"],
     surfaces: ["Shopping assistant", "Voice", "Search", "Agents", "Workflows"],
   },
+  proof: [
+    { value: 35, suffix: "%", label: "Lower cart abandonment" },
+    { value: 3.2, decimals: 1, suffix: "×", label: "Higher conversion rate" },
+    { value: 58, suffix: "%", label: "Fewer support tickets" },
+  ],
+  caseStudy: {
+    company: "Leading Home Furnishings Retailer",
+    problem: "7,000+ products and a 65% bounce rate — customers couldn't navigate categories or filter by what actually mattered to them (room size, material, style).",
+    implementation: "Added the Nexus² assistant trained on the full product catalog, dimensions, materials, finishes and style tags. Wired into order and shipping data for post-purchase queries.",
+    result: "Cart abandonment dropped 35%, conversion lifted 3.2×, and support tickets about sizing, shipping and returns fell by more than half within the first quarter.",
+  },
   connectors: {
     groups: [
       { label: "Stores", items: ["Shopify", "WooCommerce", "BigCommerce", "Magento"] },

@@ -1,21 +1,35 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Github, Twitter } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const Footer = () => {
-  const footerSections = [
+  const columns = [
     {
-      title: "Product",
+      title: "Platform",
       links: [
-        { label: "Features", to: "/product" },
-        { label: "Use Cases", to: "/use-cases" },
-        { label: "Pricing", to: "/pricing" },
+        { label: "Overview", to: "/platform" },
+        { label: "Architecture", to: "/platform" },
+        { label: "Connectors", to: "/platform" },
+        { label: "Surfaces", to: "/platform" },
+        { label: "API", to: "/platform" },
+      ],
+    },
+    {
+      title: "Solutions",
+      links: [
+        { label: "Education", to: "/solutions/education" },
+        { label: "Enterprise", to: "/solutions/enterprise" },
+        { label: "E-commerce", to: "/solutions/ecommerce" },
+        { label: "Healthcare", to: "/solutions/healthcare" },
       ],
     },
     {
       title: "Company",
       links: [
-        { label: "About", to: "/about" },
-        { label: "Industries", to: "/verticals" },
+        { label: "About", to: "/company" },
+        { label: "Pricing", to: "/pricing" },
+        { label: "Request a demo", to: "/request-demo" },
       ],
     },
   ];
@@ -23,30 +37,39 @@ const Footer = () => {
   return (
     <footer className="bg-secondary border-t border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-5 gap-12 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand column */}
-          <div className="md:col-span-1">
+          <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-1 mb-4">
               <span className="text-xl font-semibold text-foreground font-sans">Nexus</span>
               <span className="text-lg font-semibold text-accent">²</span>
             </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed font-sans">
-              Your smart website navigation assistant.
+            <p className="text-muted-foreground text-sm leading-relaxed font-sans mb-5 max-w-xs">
+              The AI layer between your data and every surface.
+            </p>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-sans mb-4">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-accent" />
+              </span>
+              Nexi is online
+            </div>
+            <p className="text-xs text-muted-foreground font-sans">
+              1,200+ businesses · 4 industries · always learning.
             </p>
           </div>
 
-          {/* Link columns */}
-          {footerSections.map((section, i) => (
-            <div key={i}>
-              <h3 className="text-foreground font-semibold mb-4 font-sans">{section.title}</h3>
+          {columns.map((c) => (
+            <div key={c.title}>
+              <h3 className="text-foreground font-semibold mb-4 font-sans">{c.title}</h3>
               <ul className="space-y-3">
-                {section.links.map((link, j) => (
-                  <li key={j}>
+                {c.links.map((l) => (
+                  <li key={l.label}>
                     <Link
-                      to={link.to}
+                      to={l.to}
                       className="text-muted-foreground hover:text-foreground transition-colors text-sm font-sans"
                     >
-                      {link.label}
+                      {l.label}
                     </Link>
                   </li>
                 ))}
@@ -55,32 +78,58 @@ const Footer = () => {
           ))}
         </div>
 
+        {/* Newsletter */}
+        <div className="bg-card border border-border rounded-3xl p-8 lg:p-10 mb-12">
+          <div className="grid md:grid-cols-2 gap-6 items-center">
+            <div>
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium tracking-wide uppercase mb-3 font-sans">
+                Stay in the loop
+              </span>
+              <p className="font-serif text-2xl text-foreground leading-snug">
+                Monthly notes on building AI-native businesses. No spam.
+              </p>
+            </div>
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="flex flex-col sm:flex-row gap-3"
+            >
+              <Input
+                type="email"
+                placeholder="you@company.com"
+                className="bg-background flex-1"
+                aria-label="Email"
+              />
+              <Button type="submit">Subscribe</Button>
+            </form>
+          </div>
+        </div>
+
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm font-sans">
-            © 2025 Nexus². All rights reserved.
+            © 2026 Nexus² · <Link to="/company" className="hover:text-foreground">Terms</Link> ·{" "}
+            <Link to="/company" className="hover:text-foreground">Privacy</Link> ·{" "}
+            <span className="inline-flex items-center gap-1.5">
+              <span className="px-1.5 py-0.5 rounded bg-accent/10 text-accent text-[10px] font-semibold tracking-wider">SOC-2</span>
+            </span>{" "}
+            ·{" "}
+            <span className="inline-flex items-center gap-1.5">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-accent" />
+              </span>
+              Status
+            </span>
           </p>
 
           <div className="flex items-center gap-6">
-            <a
-              href="#"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="LinkedIn"
-            >
+            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a
-              href="#"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="GitHub"
-            >
+            <a href="https://github.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
               <Github className="w-5 h-5" />
             </a>
-            <a
-              href="#"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Twitter"
-            >
+            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Twitter">
               <Twitter className="w-5 h-5" />
             </a>
           </div>
