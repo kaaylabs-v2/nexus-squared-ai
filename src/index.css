@@ -79,8 +79,8 @@
     
     /* Brand Colors */
     --color-primary: 0 0% 100%;           /* White for dark mode */
-    --color-accent: 160 84% 45%;          /* Emerald green (brighter for dark) */
-    --color-accent-glow: 160 84% 50%;     /* For glow effects */
+    --color-accent: 143 22% 60%;          /* Brand sage (brighter for dark) */
+    --color-accent-glow: 143 26% 65%;     /* For glow effects */
     
     /* Text Colors */
     --text-primary: 0 0% 98%;             /* Near white */
