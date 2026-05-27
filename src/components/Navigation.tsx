@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, GraduationCap, Building2, ShoppingBag, Heart, ArrowRight, Newspaper, BookOpen, History, Users } from "lucide-react";
+import { Menu, X, ChevronDown, GraduationCap, Building2, ShoppingBag, Heart, Building, Briefcase, ArrowRight, Newspaper, BookOpen, History, Users } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import {
   DropdownMenu,
@@ -17,6 +17,8 @@ const SOLUTIONS = [
   { label: "Enterprise", to: "/solutions/enterprise", icon: Building2 },
   { label: "E-commerce", to: "/solutions/ecommerce", icon: ShoppingBag },
   { label: "Healthcare", to: "/solutions/healthcare", icon: Heart },
+  { label: "Real Estate", to: "/solutions/real-estate", icon: Building },
+  { label: "Service Providers", to: "/solutions/service-providers", icon: Briefcase },
 ];
 
 const EXPLORE = [

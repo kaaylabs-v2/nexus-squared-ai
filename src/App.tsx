@@ -12,6 +12,8 @@ import ProductEducation from "./pages/ProductEducation";
 import ProductEnterprise from "./pages/ProductEnterprise";
 import ProductEcommerce from "./pages/ProductEcommerce";
 import ProductHealthcare from "./pages/ProductHealthcare";
+import ProductRealEstate from "./pages/ProductRealEstate";
+import ProductServiceProviders from "./pages/ProductServiceProviders";
 import PricingPage from "./pages/PricingPage";
 import Company from "./pages/Company";
 import Platform from "./pages/Platform";
@@ -46,6 +48,8 @@ const App = () => (
                 <Route path="/solutions/enterprise" element={<ProductEnterprise />} />
                 <Route path="/solutions/ecommerce" element={<ProductEcommerce />} />
                 <Route path="/solutions/healthcare" element={<ProductHealthcare />} />
+                <Route path="/solutions/real-estate" element={<ProductRealEstate />} />
+                <Route path="/solutions/service-providers" element={<ProductServiceProviders />} />
                 <Route path="/pricing" element={<PricingPage />} />
                 <Route path="/company" element={<Company />} />
                 <Route path="/request-demo" element={<RequestDemo />} />

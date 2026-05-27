@@ -22,6 +22,8 @@ const Footer = () => {
         { label: "Enterprise", to: "/solutions/enterprise" },
         { label: "E-commerce", to: "/solutions/ecommerce" },
         { label: "Healthcare", to: "/solutions/healthcare" },
+        { label: "Real Estate", to: "/solutions/real-estate" },
+        { label: "Service Providers", to: "/solutions/service-providers" },
       ],
     },
     {

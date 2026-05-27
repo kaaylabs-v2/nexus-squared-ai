@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { GraduationCap, Building2, ShoppingBag, Heart, ArrowRight } from "lucide-react";
+import { GraduationCap, Building2, ShoppingBag, Heart, Building, Briefcase, ArrowRight } from "lucide-react";
 import FlowMap from "@/components/FlowMap";
 import Reveal from "@/components/Reveal";
 import FinalCTASection from "@/components/FinalCTASection";
@@ -30,6 +30,18 @@ const Solutions = () => {
       blurb: "Appointments, insurance, facility wayfinding — guided with care.",
       href: "/solutions/healthcare",
     },
+    {
+      icon: Building,
+      title: "Nexus for Real Estate",
+      blurb: "From browsing to booking — one assistant for every buyer.",
+      href: "/solutions/real-estate",
+    },
+    {
+      icon: Briefcase,
+      title: "Nexus for Service Providers",
+      blurb: "Always answering. Never on call.",
+      href: "/solutions/service-providers",
+    },
   ];
 
   return (
@@ -57,7 +69,7 @@ const Solutions = () => {
 
       <section className="pb-24 lg:pb-32">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {verticals.map((p, i) => (
               <Reveal key={p.href} delay={i * 0.06}>
                 <Link
