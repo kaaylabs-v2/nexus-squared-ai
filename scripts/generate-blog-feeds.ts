@@ -26,6 +26,8 @@ const staticRoutes: Array<{ path: string; changefreq: string; priority: string }
   { path: "/solutions/enterprise", changefreq: "monthly", priority: "0.7" },
   { path: "/solutions/ecommerce", changefreq: "monthly", priority: "0.7" },
   { path: "/solutions/healthcare", changefreq: "monthly", priority: "0.7" },
+  { path: "/solutions/real-estate", changefreq: "monthly", priority: "0.7" },
+  { path: "/solutions/service-providers", changefreq: "monthly", priority: "0.7" },
   { path: "/pricing", changefreq: "monthly", priority: "0.8" },
   { path: "/company", changefreq: "monthly", priority: "0.6" },
   { path: "/request-demo", changefreq: "monthly", priority: "0.6" },
