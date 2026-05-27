@@ -255,9 +255,9 @@ const Pricing = () => {
                     <p className="text-xs uppercase tracking-widest text-accent font-sans font-medium">
                       {col.heading}
                     </p>
-                    {"subheading" in col && col.subheading && (
+                    {"subheading" in col && (col as { subheading?: string }).subheading && (
                       <p className="text-xs text-muted-foreground font-sans mt-1">
-                        {col.subheading}
+                        {(col as { subheading?: string }).subheading}
                       </p>
                     )}
                   </div>
