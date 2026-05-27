@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, GraduationCap, Building2, ShoppingBag, Heart, ArrowRight } from "lucide-react";
+import { Menu, X, ChevronDown, GraduationCap, Building2, ShoppingBag, Heart, ArrowRight, Newspaper, BookOpen, History, Users } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import {
   DropdownMenu,
@@ -9,6 +9,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { motion } from "framer-motion";
+import { posts } from "@/lib/blog";
+import { PostThumb } from "@/components/blog/PostCard";
 
 const SOLUTIONS = [
   { label: "Education", to: "/solutions/education", icon: GraduationCap },
@@ -23,9 +25,17 @@ const EXPLORE = [
   { label: "Book a demo", to: "/request-demo" },
 ];
 
+const RESOURCES_READ = [
+  { label: "Blog", to: "/blog", icon: Newspaper, soon: false },
+  { label: "Docs", to: "#", icon: BookOpen, soon: true },
+  { label: "Changelog", to: "#", icon: History, soon: true },
+  { label: "Customer stories", to: "#", icon: Users, soon: true },
+];
+
 const TOP = [
   { label: "Platform", href: "/platform" },
-  { label: "Solutions", href: "/solutions", mega: true },
+  { label: "Solutions", href: "/solutions", mega: "solutions" as const },
+  { label: "Resources", href: "/blog", mega: "resources" as const },
   { label: "Pricing", href: "/pricing" },
   { label: "Company", href: "/company" },
 ];
