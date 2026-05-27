@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, GraduationCap, Building2, ShoppingBag, Heart, ArrowRight, Newspaper, BookOpen, History, Users } from "lucide-react";
+import { Menu, X, ChevronDown, GraduationCap, Building2, ShoppingBag, Heart, Building, Briefcase, ArrowRight, Newspaper, BookOpen, History, Users } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import {
   DropdownMenu,
