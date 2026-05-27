@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Github, Twitter } from "lucide-react";
+import { Linkedin, Instagram, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -89,50 +89,75 @@ const Footer = () => {
                 Monthly notes on building AI-native businesses. No spam.
               </p>
             </div>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="flex flex-col sm:flex-row gap-3"
-            >
-              <Input
-                type="email"
-                placeholder="you@company.com"
-                className="bg-background flex-1"
-                aria-label="Email"
-              />
-              <Button type="submit">Subscribe</Button>
-            </form>
+            <div>
+              <form
+                onSubmit={(e) => e.preventDefault()}
+                className="flex flex-col sm:flex-row gap-3"
+              >
+                <Input
+                  type="email"
+                  placeholder="you@company.com"
+                  className="bg-background flex-1"
+                  aria-label="Email"
+                />
+                <Button type="submit">Subscribe</Button>
+              </form>
+              <p className="text-xs text-muted-foreground font-sans mt-3">
+                We'll only email you what's relevant. See our{" "}
+                <Link to="/privacy" className="text-accent underline underline-offset-2 hover:opacity-80">
+                  Privacy Policy
+                </Link>
+                .
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm font-sans">
-            © 2026 Nexus² · <Link to="/company" className="hover:text-foreground">Terms</Link> ·{" "}
-            <Link to="/company" className="hover:text-foreground">Privacy</Link> ·{" "}
-            <span className="inline-flex items-center gap-1.5">
-              <span className="px-1.5 py-0.5 rounded bg-accent/10 text-accent text-[10px] font-semibold tracking-wider">SOC-2</span>
-            </span>{" "}
-            ·{" "}
-            <span className="inline-flex items-center gap-1.5">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60" />
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-accent" />
-              </span>
-              Status
-            </span>
-          </p>
+        <div className="pt-8 border-t border-border flex flex-col gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-muted-foreground text-sm font-sans text-center md:text-left">
+              © 2026 Nexus² · A product of Lemuria Digital ·{" "}
+              <Link to="/privacy" className="hover:text-foreground">Privacy</Link> ·{" "}
+              <Link to="/terms" className="hover:text-foreground">Terms</Link> ·{" "}
+              <Link to="/refund" className="hover:text-foreground">Refund</Link> ·{" "}
+              <a href="mailto:support@nexusnexus.ai" className="hover:text-foreground">Contact</a> ·{" "}
+              <Link to="/legal" className="hover:text-foreground italic">All policies →</Link>
+            </p>
 
-          <div className="flex items-center gap-6">
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
-              <Github className="w-5 h-5" />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Twitter">
-              <Twitter className="w-5 h-5" />
-            </a>
+            <div className="flex items-center gap-6">
+              <a
+                href="https://www.linkedin.com/company/nexusnexus-ai/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/nexusnexus.ai/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+            </div>
           </div>
+          <p className="text-xs text-muted-foreground font-sans text-center md:text-left">
+            Payments processed securely by Lemuria Digital.
+          </p>
         </div>
       </div>
     </footer>
