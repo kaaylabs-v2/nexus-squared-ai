@@ -17,6 +17,8 @@ const SOLUTIONS = [
   { label: "Enterprise", to: "/solutions/enterprise", icon: Building2 },
   { label: "E-commerce", to: "/solutions/ecommerce", icon: ShoppingBag },
   { label: "Healthcare", to: "/solutions/healthcare", icon: Heart },
+  { label: "Real Estate", to: "/solutions/real-estate", icon: Building },
+  { label: "Service Providers", to: "/solutions/service-providers", icon: Briefcase },
 ];
 
 const EXPLORE = [
