@@ -16,6 +16,10 @@ import PricingPage from "./pages/PricingPage";
 import Company from "./pages/Company";
 import Platform from "./pages/Platform";
 import RequestDemo from "./pages/RequestDemo";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Refund from "./pages/Refund";
+import Legal from "./pages/Legal";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -43,6 +47,10 @@ const App = () => (
                 <Route path="/pricing" element={<PricingPage />} />
                 <Route path="/company" element={<Company />} />
                 <Route path="/request-demo" element={<RequestDemo />} />
+                <Route path="/legal" element={<Legal />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/refund" element={<Refund />} />
 
                 {/* 301-style client redirects from old paths */}
                 <Route path="/what-is-nexus" element={<Navigate to="/platform" replace />} />

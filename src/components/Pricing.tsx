@@ -233,6 +233,20 @@ const Pricing = () => {
           ))}
         </div>
 
+        <p className="text-center text-xs text-muted-foreground font-sans -mt-16">
+          Subscriptions are governed by our{" "}
+          <Link to="/terms" className="text-accent underline underline-offset-2 hover:opacity-80">
+            Terms
+          </Link>{" "}
+          and{" "}
+          <Link to="/refund" className="text-accent underline underline-offset-2 hover:opacity-80">
+            Refund Policy
+          </Link>
+          .
+        </p>
+
+
+
         {/* Features Comparison */}
         <div>
           <Reveal>

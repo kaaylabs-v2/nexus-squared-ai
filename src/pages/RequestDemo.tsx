@@ -310,6 +310,17 @@ const RequestDemo = () => {
                 </>
               )}
             </Button>
+            <p className="text-xs text-muted-foreground text-center font-sans">
+              By submitting, you agree to our{" "}
+              <a href="/terms" className="text-accent underline underline-offset-2 hover:opacity-80">
+                Terms
+              </a>{" "}
+              and{" "}
+              <a href="/privacy" className="text-accent underline underline-offset-2 hover:opacity-80">
+                Privacy Policy
+              </a>
+              .
+            </p>
           </form>
         </div>
       </section>
