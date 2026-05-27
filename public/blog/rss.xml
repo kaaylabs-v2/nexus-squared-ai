@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Nexus² Blog</title>
+  <link>https://nexus-squared-ai.lovable.app/blog</link>
+  <description>Perspectives, product deep-dives and customer stories from the team building Nexus².</description>
+  <language>en</language>
+  <lastBuildDate>Wed, 27 May 2026 17:09:52 GMT</lastBuildDate>
+  <item>
+    <title>Stop building bots. Start building a layer.</title>
+    <link>https://nexus-squared-ai.lovable.app/blog/stop-building-bots-start-building-a-layer</link>
+    <guid>https://nexus-squared-ai.lovable.app/blog/stop-building-bots-start-building-a-layer</guid>
+    <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+    <description>Most companies are wiring an AI tool onto every product, every page, every team. Here&apos;s why that&apos;s the wrong unit — and what to build instead.</description>
+    <category>perspective</category>
+  </item>
+  <item>
+    <title>Meet Nexi — one assistant across every surface.</title>
+    <link>https://nexus-squared-ai.lovable.app/blog/meet-nexi-one-assistant-across-every-surface</link>
+    <guid>https://nexus-squared-ai.lovable.app/blog/meet-nexi-one-assistant-across-every-surface</guid>
+    <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
+    <description>Nexi is the friendly face of the Nexus² platform. Same brain in chat, voice, search, agents and the API.</description>
+    <category>product</category>
+  </item>
+  <item>
+    <title>From 65% bounce to 35% lower cart abandonment — a Home Furnishings story.</title>
+    <link>https://nexus-squared-ai.lovable.app/blog/home-furnishings-bounce-to-cart</link>
+    <guid>https://nexus-squared-ai.lovable.app/blog/home-furnishings-bounce-to-cart</guid>
+    <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+    <description>How a leading home furnishings retailer used Nexus² to help shoppers navigate 7,000+ products.</description>
+    <category>case-study</category>
+  </item>
+  <item>
+    <title>Conversations, minutes, tokens — what each one actually means.</title>
+    <link>https://nexus-squared-ai.lovable.app/blog/conversations-minutes-tokens-explained</link>
+    <guid>https://nexus-squared-ai.lovable.app/blog/conversations-minutes-tokens-explained</guid>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+    <description>An honest explainer of how Nexus² is metered, why we sell conversations instead of tokens, and how it translates.</description>
+    <category>product</category>
+  </item>
+</channel>
+</rss>
