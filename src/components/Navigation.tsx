@@ -275,6 +275,9 @@ const Navigation = () => {
                   → Solutions overview
                 </Link>
               </div>
+              <Link to="/blog" className="block text-foreground font-medium py-2 font-sans">
+                Blog
+              </Link>
               <Link to="/pricing" className="block text-foreground font-medium py-2 font-sans">
                 Pricing
               </Link>
