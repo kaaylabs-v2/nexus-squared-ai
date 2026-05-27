@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "bunx tsx scripts/generate-blog-feeds.ts",
+    "prebuild": "bunx tsx scripts/generate-blog-feeds.ts",
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
