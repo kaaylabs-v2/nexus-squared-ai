@@ -25,6 +25,13 @@ const Footer = () => {
       ],
     },
     {
+      title: "Resources",
+      links: [
+        { label: "Blog", to: "/blog" },
+        { label: "Newsletter", to: "/blog#newsletter" },
+      ],
+    },
+    {
       title: "Company",
       links: [
         { label: "About", to: "/company" },
