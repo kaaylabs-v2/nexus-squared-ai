@@ -160,7 +160,11 @@ const ChatWidget = () => {
             </Button>
           </div>
           <p className="text-xs text-text-secondary mt-2 text-center">
-            Powered by Nexus²
+            Your conversations are handled per our{" "}
+            <a href="/privacy" className="text-accent underline underline-offset-2">
+              Privacy Policy
+            </a>
+            .
           </p>
         </div>
       </div>
