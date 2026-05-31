@@ -36,6 +36,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://nexus-squared-ai.lovable.app/solutions/real-estate</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nexus-squared-ai.lovable.app/solutions/service-providers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://nexus-squared-ai.lovable.app/pricing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
